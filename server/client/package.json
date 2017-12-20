@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "proxy": {
+    "/login": {
+      "target": "http://localhost:5000"
+    }
+  },
   "scripts": {
     "build": "webpack",
-    "serve": "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
