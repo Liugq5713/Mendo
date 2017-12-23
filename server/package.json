@@ -1,8 +1,9 @@
 {
-  "name": "Mendo",
+  "name": "mendo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "client": "npm run start --prefix client",
     "server": "nodemon index.js",
@@ -11,6 +12,7 @@
   "dependencies": {
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "mongoose": "^4.13.7",
     "nodemon": "^1.13.3",
     "passport": "^0.4.0",
