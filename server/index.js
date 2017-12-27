@@ -4,30 +4,23 @@ const passport = require("passport");
 const GitHubStrategy = require("passport-github");
 const LocalStrategy = require("passport-local");
 const keys = require("./config/keys");
-
+require("./models/User");
 require("./services/signup");
 const signup = require("./routers/signup");
 
 const app = express();
 
 app.use(require("body-parser").urlencoded({ extended: true }));
-app.use(require("cookie-parser")());
+// app.use(require("cookie-parser")());
 
 app.use(expressSession({ secret: keys.sessionSecret }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
 // ---DB---
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
 mongoose.connect(keys.MongoDBURI, { useMongoClient: true }, err => {
   if (err) {
     console.error(" db connection error: " + err.message);
