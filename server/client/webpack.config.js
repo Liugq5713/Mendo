@@ -9,7 +9,7 @@ const path = require("path");
 // 如果你要使用sass ，可能会安装失败，因为他的东西被墙了 sass-loader,
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/index.js",
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "public")

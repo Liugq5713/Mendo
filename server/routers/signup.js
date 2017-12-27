@@ -5,7 +5,7 @@ router.post(
   "/signup",
   passport.authenticate("signup", {
     successRedirect: "/",
-    session: false
+    session: true
   })
 );
 
