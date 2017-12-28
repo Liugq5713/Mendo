@@ -13,6 +13,7 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
 passport.use(
   "signup",
   new LocalStrategy(async (username, password, done) => {

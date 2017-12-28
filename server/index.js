@@ -13,7 +13,13 @@ const app = express();
 app.use(require("body-parser").urlencoded({ extended: true }));
 // app.use(require("cookie-parser")());
 
-app.use(expressSession({ secret: keys.sessionSecret }));
+app.use(
+  expressSession({
+    name: "mendo",
+    secret: keys.sessionSecret,
+    cookie: { user: "default", maxAge: 14 * 24 * 60 * 60 * 1000 }
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
