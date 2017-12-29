@@ -7,6 +7,7 @@ const keys = require("./config/keys");
 require("./models/User");
 require("./services/signup");
 const signup = require("./routers/signup");
+const checkuser = require("./routers/checkuser");
 
 const app = express();
 
