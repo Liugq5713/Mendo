@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 //在app.js 里面作为组织组件的入口，在这里处理路由
 import { BrowserRouter, Route } from "react-router-dom";
 
-import { checkUser, test } from "../actions";
+import { checkUserAsync, test } from "../actions";
 
 import Home from "./Home";
 import Login from "./Login";
@@ -18,7 +18,7 @@ class App extends Component {
     super(props);
   }
   componentWillMount() {
-    this.props.test();
+    this.props.checkUser();
   }
   render() {
     return (
@@ -32,11 +32,15 @@ class App extends Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  test: () => {
-    dispatch(test());
-  }
+const mapStateToprops = state => ({
+  islogin: state.islogin
 });
 
-export default connect(null, mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    checkUser: () => {
+      dispatch(checkUserAsync());
+    }
+  };
+};
+export default connect(mapStateToprops, mapDispatchToProps)(App);
