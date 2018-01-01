@@ -4,6 +4,7 @@ const passport = require("passport");
 const GitHubStrategy = require("passport-github");
 const LocalStrategy = require("passport-local");
 const keys = require("./config/keys");
+
 require("./models/User");
 require("./services/signup");
 
@@ -37,6 +38,7 @@ mongoose.connect(keys.MongoDBURI, { useMongoClient: true }, err => {
 
 // ----
 app.use("/api", signup);
+app.use("/api", checkuser);
 
 // ----
 

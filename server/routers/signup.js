@@ -9,8 +9,4 @@ router.post(
   })
 );
 
-router.get("/checkuser", (req, res) => {
-  res.send("get it");
-});
-
 module.exports = router;
