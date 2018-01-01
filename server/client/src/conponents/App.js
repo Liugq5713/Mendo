@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+
 // 组件 和 redux 进行连接
-import { connect } from "redux";
+import { connect } from "react-redux";
 
 //在app.js 里面作为组织组件的入口，在这里处理路由
 import { BrowserRouter, Route } from "react-router-dom";
 
-import checkuser from "../actions/checkuser";
+import { checkUser, test } from "../actions";
 
 import Home from "./Home";
 import Login from "./Login";
@@ -17,7 +18,7 @@ class App extends Component {
     super(props);
   }
   componentWillMount() {
-    this.props.checkuser();
+    this.props.test();
   }
   render() {
     return (
@@ -31,9 +32,11 @@ class App extends Component {
     );
   }
 }
+
 const mapDispatchToProps = dispatch => ({
-  checkuser: () => {
-    dispatch(checkuser);
+  test: () => {
+    dispatch(test());
   }
 });
+
 export default connect(null, mapDispatchToProps)(App);
