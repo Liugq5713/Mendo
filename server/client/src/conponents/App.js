@@ -16,6 +16,7 @@ import { checkUserAsync, test } from "../actions";
 import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
+import Test from "./Test";
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/test" component={Test} />
         </div>
       </BrowserRouter>
     );

@@ -7,9 +7,11 @@ const keys = require("./config/keys");
 
 require("./models/User");
 require("./services/signup");
+require("./services/login");
 
 const signup = require("./routers/signup");
 const checkuser = require("./routers/checkuser");
+const login = require("./routers/login");
 
 const app = express();
 
@@ -38,6 +40,7 @@ mongoose.connect(keys.MongoDBURI, { useMongoClient: true }, err => {
 
 // ----
 app.use("/api", signup);
+app.use("/api", login);
 app.use("/api", checkuser);
 
 // ----

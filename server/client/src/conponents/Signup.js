@@ -1,14 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Signup extends Component {
   render() {
     return (
       <div className="row">
-        <form method="POST" action="/api/login" className="col s10 offset-s1">
+        <form method="POST" action="/api/signup" className="col s10 offset-s1">
           <div className="row">
             <div className="input-field">
-              <input id="email" name="email" type="text" className="validate" />
-              <label htmlFor="email">Email</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="username">username</label>
             </div>
           </div>
           <div className="row">
@@ -27,15 +33,21 @@ export default class Signup extends Component {
               type="submit"
               className="btn waves-effect waves-light col s12"
             >
-              <i class="fa fa-sign-in col s2" aria-hidden="true" />
-              注 册
+              <i className="fa fa-sign-in" aria-hidden="true" /> 注 册
             </button>
           </div>
           <div className="row">
             <a className="waves-effect waves-light btn col s12">
-              <i className="fa fa-github  col s2" aria-hidden="true" />
-              GITHUB大佬专用通道
+              <i className="fa fa-github " aria-hidden="true" />
+              {""} GITHUB大佬专用通道
             </a>
+          </div>
+          <div className="row">
+            <div className="center-align">
+              <Link to="/login">
+                ---------------已有账号,点此登录---------------
+              </Link>
+            </div>
           </div>
         </form>
       </div>
