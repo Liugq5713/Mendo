@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 router.get("/checkuser", (req, res) => {
-  res.send("have it");
+  res.send(req.user);
 });
 
 module.exports = router;

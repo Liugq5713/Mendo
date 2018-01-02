@@ -10,6 +10,8 @@
   "dependencies": {
     "axios": "^0.17.1",
     "css-loader": "^0.28.7",
+    "font-awesome": "^4.7.0",
+    "materialize-css": "^0.100.2",
     "node-sass": "^4.7.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -21,6 +23,8 @@
     "sass-loader": "^6.0.6",
     "scss-loader": "^0.0.1",
     "style-loader": "^0.19.0",
+    "svg-url-loader": "^2.3.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   },

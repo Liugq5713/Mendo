@@ -1,6 +1,10 @@
+import "jquery/dist/jquery.min.js";
+import "materialize-css/dist/js/materialize.min.js";
+
+import "materialize-css/dist/css/materialize.min.css";
+import "font-awesome/css/font-awesome.min.css";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
 // 组件 和 redux 进行连接
 import { connect } from "react-redux";
 
@@ -23,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="container">
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />

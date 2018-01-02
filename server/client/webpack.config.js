@@ -24,6 +24,16 @@ module.exports = {
       {
         test: /.s?css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader"
+        }
       }
     ]
   },
@@ -32,6 +42,7 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
     // host:'192.168.137.1',
     port: 8080,
+    host: "10.224.5.55",
     open: true,
     historyApiFallback: true,
     proxy: [
