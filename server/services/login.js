@@ -22,7 +22,7 @@ passport.use(
       if (existingUser) {
         done(null, existingUser);
       } else {
-        done(err);
+        done(null, false);
       }
     } catch (err) {
       done(err);

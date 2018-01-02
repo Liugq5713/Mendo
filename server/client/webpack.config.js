@@ -42,7 +42,8 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
     // host:'192.168.137.1',
     port: 8080,
-    host: "10.224.5.55",
+    // host: "10.224.5.55",
+    host: "192.168.137.1",
     open: true,
     historyApiFallback: true,
     proxy: [

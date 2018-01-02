@@ -1,5 +1,7 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const expressSession = require("express-session");
+
 const passport = require("passport");
 const GitHubStrategy = require("passport-github");
 const LocalStrategy = require("passport-local");
@@ -14,13 +16,15 @@ const checkuser = require("./routers/checkuser");
 const login = require("./routers/login");
 
 const app = express();
-
-app.use(require("body-parser").urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(require("cookie-parser")());
 
 app.use(
   expressSession({
     name: "mendo",
+    saveUninitialized: true, // saved new sessions
+    resave: false, // do not automatically write to the session store
     secret: keys.sessionSecret,
     cookie: { user: "default", maxAge: 14 * 24 * 60 * 60 * 1000 }
   })
