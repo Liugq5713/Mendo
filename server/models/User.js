@@ -1,5 +1,6 @@
-const Mongoose = require("mongoose");
-const UserSchema = Mongoose.Schema({
+const mongoose = require("mongoose");
+const crypto = require("crypto");
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true
@@ -8,4 +9,13 @@ const UserSchema = Mongoose.Schema({
     type: String
   }
 });
-Mongoose.model("user", UserSchema);
+
+UserSchema.pre("save", function(next) {
+  var content = this.password + "solt";
+  var sha = crypto.createHash("sha1");
+  sha.update(content);
+  this.password = sha.digest("hex");
+  next();
+});
+
+mongoose.model("user", UserSchema);
