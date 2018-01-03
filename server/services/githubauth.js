@@ -14,13 +14,10 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
       const existingUser = await User.findOne({ githubId: profile.id });
-
       if (existingUser) {
         return done(null, existingUser);
       }
-
       const user = await new User({ githubId: profile.id }).save();
       done(null, user);
     }

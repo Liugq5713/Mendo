@@ -1,0 +1,5 @@
+::ffff:127.0.0.1 - GET /api/checkuser HTTP/1.1 200 - - 1.879 ms
+::ffff:127.0.0.1 - GET /api/checkuser HTTP/1.1 200 - - 0.345 ms
+::ffff:127.0.0.1 - GET /api/checkuser HTTP/1.1 200 - - 0.163 ms
+::ffff:127.0.0.1 - POST /api/signup HTTP/1.1 302 46 - 23.524 ms
+::ffff:127.0.0.1 - GET /api/checkuser HTTP/1.1 200 116 - 0.923 ms

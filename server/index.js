@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 
+const morgan = require("morgan");
+const fs = require("fs");
+const path = require("path");
 const passport = require("passport");
 const GitHubStrategy = require("passport-github");
 const LocalStrategy = require("passport-local");
@@ -34,16 +37,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
-
 // ---DB---
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
@@ -54,6 +47,16 @@ mongoose.connect(keys.MongoDBURI, { useMongoClient: true }, err => {
   }
 });
 
+// --- 输出日志
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(
+  path.join(__dirname, "/log/access.log"),
+  {
+    flags: "a"
+  }
+);
+app.use(morgan("short", { stream: accessLogStream }));
+
 // ----
 app.use("/api", signup);
 app.use("/api", login);
@@ -62,6 +65,7 @@ app.use("/auth", githubHandler);
 
 // ----
 
+//--- 监听接口
 app.listen(5000, () => {
   console.log("server start");
 });

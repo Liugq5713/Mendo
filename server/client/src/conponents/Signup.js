@@ -37,14 +37,12 @@ export default class Signup extends Component {
             </button>
           </div>
           <div className="row">
-            <a className="waves-effect waves-light btn col s12">
-              <i className="fa fa-github " aria-hidden="true" />
-              &nbsp;<a
-                href="/auth/github"
-                class=" blue-grey-text text-lighten-5"
-              >
-                GITHUB大佬专用通道
-              </a>
+            <a
+              href="/auth/github"
+              className="waves-effect waves-light btn col s12 blue-grey-text text-lighten-5"
+            >
+              <i className="fa fa-github" aria-hidden="true" />
+              &nbsp;GITHUB大佬专用通道
             </a>
           </div>
           <div className="row">
