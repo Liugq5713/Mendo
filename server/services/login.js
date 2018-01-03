@@ -19,11 +19,9 @@ passport.use(
   new LocalStrategy(async (username, password, done) => {
     try {
       let existingUser = await User.findOne({ username: username });
-      if (existingUser) {
-        done(null, existingUser);
-      } else {
-        done(null, false);
-      }
+      if (!existingUser) return done(null, false);
+      // if (!existingUser.authenticate(password)) return done(null, false);
+      done(null, existingUser);
     } catch (err) {
       done(err);
     }

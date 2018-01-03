@@ -18,4 +18,5 @@ UserSchema.pre("save", function(next) {
   next();
 });
 
+// UserSchema.method.comparePassword = function(candidatePassword) {};
 mongoose.model("user", UserSchema);
