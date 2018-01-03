@@ -1,7 +1,3 @@
-app.get("/auth/github", passport.authenticate("github"));
-
-app.get("/auth/github/callback", passport.authenticate("github"));
-
 passport.use(
   new GitHubStrategy(
     {
@@ -14,3 +10,13 @@ passport.use(
     }
   )
 );
+
+passport.serializeUser(function(user, done) {
+  done(null, user._id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});

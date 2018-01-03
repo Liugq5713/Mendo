@@ -10,10 +10,12 @@ const keys = require("./config/keys");
 require("./models/User");
 require("./services/signup");
 require("./services/login");
+require("./services/githubauth");
 
 const signup = require("./routers/signup");
 const checkuser = require("./routers/checkuser");
 const login = require("./routers/login");
+const githubHandler = require("./routers/githubauth");
 
 const app = express();
 // app.use(bodyParser.json());
@@ -32,6 +34,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.serializeUser(function(user, done) {
+  done(null, user._id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
+
 // ---DB---
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
@@ -46,6 +58,7 @@ mongoose.connect(keys.MongoDBURI, { useMongoClient: true }, err => {
 app.use("/api", signup);
 app.use("/api", login);
 app.use("/api", checkuser);
+app.use("/auth", githubHandler);
 
 // ----
 

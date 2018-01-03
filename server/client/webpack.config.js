@@ -50,6 +50,10 @@ module.exports = {
       {
         path: "/api/*",
         target: "http://localhost:5000"
+      },
+      {
+        path: "/auth/*",
+        target: "http://localhost:5000"
       }
     ]
   }
