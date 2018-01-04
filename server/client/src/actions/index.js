@@ -10,6 +10,6 @@ export const test = () => ({
 
 export const checkUserAsync = () => async dispatch => {
   const res = await axios.get("/api/checkuser");
-  console.log(res.data);
-  dispatch({ type: "CHECK_USER", islogin: res.data });
+  console.log("action:", res.data.username);
+  dispatch({ type: "CHECK_USER", username: res.data.username });
 };

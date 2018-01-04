@@ -1,11 +1,19 @@
 const stateInit = {
-  islogin: false
+  profile: {
+    username: ""
+  }
 };
 
 export default (state = stateInit, action) => {
   switch (action.type) {
     case "CHECK_USER":
-      return Object.assign({}, state, { islogin: action.islogin });
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          username: action.username
+        }
+      };
     case "TEST":
       return state;
     default:
