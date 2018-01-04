@@ -3,7 +3,7 @@ const passport = require("passport");
 router.get(
   "/github",
   passport.authenticate("github", {
-    scope: ["profile", "email"]
+    scope: ["read:user"]
   })
 );
 

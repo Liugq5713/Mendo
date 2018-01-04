@@ -18,7 +18,13 @@ passport.use(
       if (existingUser) {
         return done(null, existingUser);
       }
-      const user = await new User({ githubId: profile.id }).save();
+      // 对于其对象的具体的结构要清楚
+      // console.log("profile", profile);
+      // console.log("------------");
+      const user = await new User({
+        username: profile.username,
+        githubId: profile.id
+      }).save();
       done(null, user);
     }
   )

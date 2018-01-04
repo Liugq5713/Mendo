@@ -10,8 +10,14 @@ passport.use(
     try {
       let existingUser = await User.findOne({ username: username });
       if (!existingUser) return done(null, false);
-      // if (!existingUser.authenticate(password)) return done(null, false);
-      done(null, existingUser);
+      existingUser.comparePassword(password, (err, isMatch) => {
+        if (err) done(err);
+        if (isMatch) {
+          done(null, existingUser);
+        } else {
+          done(null, false);
+        }
+      });
     } catch (err) {
       done(err);
     }
