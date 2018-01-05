@@ -1,0 +1,12 @@
+.home--main {
+  position: absolute;
+  top: 4rem;
+  bottom: 4rem;
+  /* 使之可以滚动 */
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.home--chatcontent {
+  height: auto;
+}

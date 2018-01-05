@@ -5,7 +5,6 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import App from "./conponents/App";
-import "./styles/style.scss";
 import configureStore from "./store/configureStore";
 
 const store = configureStore();

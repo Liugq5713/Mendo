@@ -17,7 +17,7 @@ class Header extends Component {
   render() {
     const username = this.props.username;
     return (
-      <div>
+      <header>
         <nav>
           <div className="nav-wrapper">
             <a href="#!" className="brand-logo">
@@ -39,7 +39,7 @@ class Header extends Component {
             </a>
           </div>
         </nav>
-      </div>
+      </header>
     );
   }
 }

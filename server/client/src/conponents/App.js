@@ -3,6 +3,8 @@ import "materialize-css/dist/js/materialize.min.js";
 
 import "materialize-css/dist/css/materialize.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import "../styles/style.scss";
+
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
