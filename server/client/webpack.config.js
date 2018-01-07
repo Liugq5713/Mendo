@@ -40,10 +40,10 @@ module.exports = {
   devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public"),
-    // host:'192.168.137.1',
     port: 8080,
-    host: "10.224.5.55",
-    // host: "192.168.137.1",
+    // host: "10.224.5.55",
+    // host: "10.255.132.111",
+    host: "192.168.137.1",
     open: true,
     historyApiFallback: true,
     proxy: [

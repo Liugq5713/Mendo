@@ -1,12 +1,12 @@
-.home--main {
-  position: absolute;
-  top: 4rem;
-  bottom: 4rem;
-  /* 使之可以滚动 */
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.home--chatcontent {
-  height: auto;
+.fixed-middle {
+  display: flex;
+}
+.fixed-middle .content {
+  flex: 1 0 auto;
 }

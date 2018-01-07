@@ -17,7 +17,7 @@ class Header extends Component {
   render() {
     const username = this.props.username;
     return (
-      <header>
+      <header className="header">
         <nav>
           <div className="nav-wrapper">
             <a href="#!" className="brand-logo">

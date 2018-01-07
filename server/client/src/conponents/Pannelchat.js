@@ -6,6 +6,25 @@ class Pannelchat extends Component {
       <div className="row">
         <div className="col s12">
           <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
+          <h1>chat pannelor</h1>
         </div>
       </div>
     );

@@ -5,14 +5,18 @@ import Inputchat from "./Inputchat";
 class Home extends Component {
   render() {
     return (
-      <div className="row">
-        <Header />
-        <main className="home--main">
-          <div className="home--chatcontent">
+      <div className="page">
+        <div className="fixed-top">
+          <Header />
+        </div>
+        <main className="fixed-middle">
+          <div className="content">
             <Pannelchat />
           </div>
         </main>
-        <Inputchat />
+        <div className="fixed-bottom">
+          <Inputchat />
+        </div>
       </div>
     );
   }
