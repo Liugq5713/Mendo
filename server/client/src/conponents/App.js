@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         {/* className="container"    */}
-        <div>
+        <div id="componentWrapper">
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />

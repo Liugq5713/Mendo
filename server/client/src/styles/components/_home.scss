@@ -1,12 +1,29 @@
-.page {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+html,
+body {
+  height: 100%;
+  overflow: hidden;
 }
 
-.fixed-middle {
-  display: flex;
+#app {
+  height: 100%;
 }
-.fixed-middle .content {
-  flex: 1 0 auto;
+#componentWrapper {
+  height: 100%;
+}
+.page_talk {
+  height: 100%;
+  .talk_header {
+    height: 9%;
+    width: 100%;
+    background-color: #e71c1c;
+  }
+  .talk_middle {
+    height: 81%;
+    overflow-y: auto;
+    background-color: #e71c1c;
+  }
+  .talk_footer {
+    height: 10%;
+    background-color: #0c0a0a;
+  }
 }

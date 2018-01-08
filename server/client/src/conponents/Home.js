@@ -1,21 +1,19 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Pannelchat from "./Pannelchat";
-import Inputchat from "./Inputchat";
+import Talkheader from "./Header";
+import Talkcontent from "./Talkcontent";
+import Talkinput from "./Talkinput";
 class Home extends Component {
   render() {
     return (
-      <div className="page">
-        <div className="fixed-top">
-          <Header />
+      <div className="page_talk">
+        <div className="talk_header ">
+          <Talkheader />
         </div>
-        <main className="fixed-middle">
-          <div className="content">
-            <Pannelchat />
-          </div>
-        </main>
-        <div className="fixed-bottom">
-          <Inputchat />
+        <div className="talk_middle">
+          <Talkcontent />
+        </div>
+        <div className="talk_footer">
+          <Talkinput />
         </div>
       </div>
     );

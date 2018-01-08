@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { checkUserAsync, test } from "../actions";
+import avatar from "../images/avatar.jpg";
 
 class Header extends Component {
   constructor(props) {
@@ -18,27 +19,14 @@ class Header extends Component {
     const username = this.props.username;
     return (
       <header className="header">
-        <nav>
-          <div className="nav-wrapper">
-            <a href="#!" className="brand-logo">
-              {username}
-            </a>
-            <a
-              href="#"
-              data-activates="mobile-demo"
-              className="button-collapse"
-            >
-              <i className="fa fa-bars" aria-hidden="true" />
-            </a>
-            <a
-              href="#"
-              data-activates="mobile-demo"
-              className="button-collapse right"
-            >
-              <i className="fa fa-sign-out" aria-hidden="true" />
-            </a>
-          </div>
-        </nav>
+        <div className="nav">
+          <a href="#" className="menu">
+            <i className="fa fa-bars" aria-hidden="true" />
+          </a>
+          <a href="#" className="avatar">
+            <img src={avatar} alt="" className="circle circle__style" />
+          </a>
+        </div>
       </header>
     );
   }

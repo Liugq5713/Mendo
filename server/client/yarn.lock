@@ -1955,7 +1955,7 @@ fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-file-loader@1.1.6:
+file-loader@1.1.6, file-loader@^1.1.6:
   version "1.1.6"
   resolved "http://registry.npm.taobao.org/file-loader/download/file-loader-1.1.6.tgz#7b9a8f2c58f00a77fddf49e940f7ac978a3ea0e8"
   dependencies:

@@ -1,1 +1,26 @@
-
+.header {
+  height: 4rem;
+  width: 100%;
+  background-color: rgb(228, 234, 238);
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    .menu {
+      font-size: 2rem;
+      margin-left: 10px;
+    }
+    .avatar {
+      height: 3rem;
+      margin-right: 10px;
+      .circle__style {
+        height: 3rem;
+        align-self: flex-end;
+      }
+    }
+  }
+}

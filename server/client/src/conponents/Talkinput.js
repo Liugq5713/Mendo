@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class InputChat extends Component {
+export default class Talkinput extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,5 +83,3 @@ class InputChat extends Component {
     );
   }
 }
-
-export default InputChat;

@@ -1,35 +1,29 @@
-// .formToSendMsg {
-//   margin-bottom: 0px;
-//   height: 4rem;
-//   width: 100%;
-//   background-color: #f5f1ee;
-// }
-// .formToSendMsg__fixed {
-//   bottom: 0;
-// }
-// .formToSendMsg__absolute {
-//   position: absolute;
-// }
+.formToSendMsg {
+  margin-bottom: 0px;
+  height: 4rem;
+  width: 100%;
+  background-color: #08ff08;
+}
 
-// #inputToSendMsg {
-//   position: relative;
-//   margin-top: 0.4rem;
-//   margin-bottom: 0;
-//   //   border: 1px solid #d3d1d1;
-//   background-color: hsl(0, 24%, 96%);
-//   //   background-color: rgb(201, 66, 66);
-// }
+#inputToSendMsg {
+  position: relative;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  //   border: 1px solid #d3d1d1;
+  //   background-color:  hsl(0, 24%, 96%);
+  //   background-color: rgb(201, 66, 66);
+}
 
 // .inputToSendMsg {
 //   border: 1px solid #9e9e9e;
 //   background: rgb(165, 30, 30);
 // }
-// #btnToSendMsg {
-//   position: relative;
+#btnToSendMsg {
+  position: relative;
 
-//   margin-top: 0.42rem;
-//   height: 2.9rem;
-// }
-// .removeLeftPadding {
-//   padding: 0px !important;
-// }
+  margin-top: 0.42rem;
+  height: 2.9rem;
+}
+.removeLeftPadding {
+  padding: 0px !important;
+}

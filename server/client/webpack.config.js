@@ -30,6 +30,15 @@ module.exports = {
         loader: "url-loader?limit=100000"
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {}
+          }
+        ]
+      },
+      {
         test: /\.svg/,
         use: {
           loader: "svg-url-loader"
@@ -41,9 +50,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public"),
     port: 8080,
-    // host: "10.224.5.55",
+    host: "10.224.5.55",
     // host: "10.255.132.111",
-    host: "192.168.137.1",
+    // host: "192.168.137.1",
     open: true,
     historyApiFallback: true,
     proxy: [
