@@ -9,33 +9,6 @@ export default class Talkinput extends Component {
       inputboxHeight: 0
     };
     this.handleInput = this.handleInput.bind(this);
-    this.updateDimensions = this.updateDimensions.bind(this);
-    this.scrollIntoView = this.scrollIntoView.bind(this);
-    this.scrollIntoformer = this.scrollIntoformer.bind(this);
-  }
-  componentWillMount() {
-    this.updateDimensions();
-  }
-  updateDimensions() {
-    this.setState({
-      // width: $(window).width(),
-      viewheight: $(window).height(),
-      inputboxHeight: $(".formToSendMsg").height()
-    });
-  }
-  componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions);
-  }
-  scrollIntoView() {
-    const heightfix = this.state.viewheight - 63;
-    $(".formToSendMsg").addClass("formToSendMsg__fixed");
-    $(".formToSendMsg").css("top", heightfix);
-  }
-  scrollIntoformer() {
-    $(".formToSendMsg").removeClass("formToSendMsg__fixed");
   }
   handleInput(e) {
     this.setState({ value: e.target.value });
@@ -43,12 +16,7 @@ export default class Talkinput extends Component {
   render() {
     return (
       <div className="row">
-        <form
-          ref={inputbox => {
-            this.inputbox = inputbox;
-          }}
-          className="formToSendMsg"
-        >
+        <form className="formToSendMsg">
           <div className="row">
             <div className="col s9  ">
               <input
@@ -56,8 +24,6 @@ export default class Talkinput extends Component {
                 type="text"
                 value={this.state.value}
                 onChange={this.handleInput}
-                onFocus={this.scrollIntoView}
-                onBlur={this.scrollIntoformer}
               />
             </div>
             <div className="col s3 removeLeftPadding">
