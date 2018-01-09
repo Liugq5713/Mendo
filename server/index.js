@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const expressSession = require("express-session");
+const http = require("http");
 
 const morgan = require("morgan");
 const fs = require("fs");
@@ -20,7 +21,9 @@ const checkuser = require("./routers/checkuser");
 const login = require("./routers/login");
 const githubHandler = require("./routers/githubauth");
 
-const app = express();
+var app = express();
+var server = app.listen(5000);
+const io = require("socket.io").listen(server);
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(require("cookie-parser")());
@@ -63,9 +66,14 @@ app.use("/api", login);
 app.use("/api", checkuser);
 app.use("/auth", githubHandler);
 
-// ----
-
-//--- 监听接口
-app.listen(5000, () => {
-  console.log("server start");
+// ---- 聊天功能添加中
+io.on("connection", function(socket) {
+  console.log("a user connected");
+  socket.on("SEND_MESSAGE", function(data) {
+    console.log("data", data);
+    io.emit("RECEIVE_MESSAGE", data);
+  });
+  socket.on("disconnect", function() {
+    console.log("user disconnected");
+  });
 });
