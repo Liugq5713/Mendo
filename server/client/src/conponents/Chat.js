@@ -11,7 +11,7 @@ class Chat extends React.Component {
       messages: []
     };
 
-    this.socket = io("localhost:5000");
+    this.socket = io("10.224.5.55:5000");
 
     this.socket.on("RECEIVE_MESSAGE", function(data) {
       addMessage(data);

@@ -22,7 +22,7 @@ const login = require("./routers/login");
 const githubHandler = require("./routers/githubauth");
 
 var app = express();
-var server = app.listen(5000);
+var server = http.createServer(app);
 const io = require("socket.io").listen(server);
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -76,4 +76,9 @@ io.on("connection", function(socket) {
   socket.on("disconnect", function() {
     console.log("user disconnected");
   });
+});
+
+//监听
+server.listen("5000", () => {
+  console.log("is listening");
 });
