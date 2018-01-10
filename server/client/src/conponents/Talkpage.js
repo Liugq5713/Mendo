@@ -3,6 +3,7 @@ import Talkheader from "./Header";
 import Talkcontent from "./Talkcontent";
 import Talkinput from "./Talkinput";
 import io from "socket.io-client";
+import { setInterval } from "core-js/library/web/timers";
 // import Chat from "./Chat";
 class Talkpage extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class Talkpage extends Component {
       }
     };
     //socket  io 连接发送信息配置
-    this.socket = io("10.224.5.55:5000");
+    // this.socket = io("10.224.5.55:5000");
+    this.socket = io("http://localhost:5000");
 
     this.socket.on("RECEIVE_MESSAGE", function(data) {
       addMessage(data);
@@ -22,9 +24,8 @@ class Talkpage extends Component {
     const addMessage = data => {
       console.log(data);
       this.setState({
-        talkMsgContents: [...this.state.talkMsgContents, data]
+        talkMsgContents: [...this.state.talkMsgContents, data.message]
       });
-      console.log(this.state.messages);
     };
 
     this.sendMessage = ev => {
@@ -35,23 +36,40 @@ class Talkpage extends Component {
       this.setState({
         talkMsgContent: { ...this.state.talkMsgContent, msg: "" }
       });
+      this.scrollToBottom();
     };
+
+    this.handleInput = this.handleInput.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   //-----------------------------------
+  componentWillMount() {}
+  //按下发送键之后，将聊天内容区域滑动到底部
+  scrollToBottom() {
+    this.talk_middle.scrollTop = this.talk_middle.scrollHeight;
+  }
+  //处理输入框的输入，并且存入state中
   handleInput(e) {
-    this.setState({
-      talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value }
+    e.persist();
+    this.setState(function(prevState, props) {
+      return {
+        talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value }
+      };
     });
   }
 
   render() {
+    const talkMsgContents = this.state.talkMsgContents;
     return (
       <div className="page_talk">
-        <div className="talk_header ">
+        <div className="talk_header">
           <Talkheader />
         </div>
-        <div className="talk_middle">
-          <Talkcontent />
+        <div
+          className="talk_middle"
+          ref={talk_middle => (this.talk_middle = talk_middle)}
+        >
+          <Talkcontent talkMsgContents={talkMsgContents} />
         </div>
         <div className="talk_footer">
           <Talkinput
