@@ -1,0 +1,29 @@
+.talkmsgWrapper {
+  .avatarWrapper {
+    margin-top: 1rem;
+  }
+  .talkerName {
+    color: $talkerName_font_color;
+    margin-bottom: 0.2rem;
+  }
+  .talkMsgWrapper {
+    display: flex;
+
+    color: $talkmsg_font_color;
+    background-color: $talkinputbox_bg;
+    .triangle {
+      margin-left: -0.38rem;
+      margin-top: 8px;
+      font-size: 0;
+      width: 0px;
+      height: 0px;
+      border: solid 0.5rem;
+      border-color: $talkinputbox_bg;
+      transform: rotate(45deg);
+    }
+    .talkmsgdetail {
+      border-radius: 5px;
+      padding: 0.3rem;
+    }
+  }
+}

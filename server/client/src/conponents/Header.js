@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { checkUserAsync, test } from "../actions";
-import avatar from "../images/avatar.jpg";
 
+import Avatar from "./Avatar";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -23,9 +23,9 @@ class Header extends Component {
           <a href="#" className="menu">
             <i className="fa fa-bars" aria-hidden="true" />
           </a>
-          <a href="#" className="avatar">
-            <img src={avatar} alt="" className="circle circle__style" />
-          </a>
+          <div className="avatarWrapper">
+            <Avatar />
+          </div>
         </div>
       </header>
     );

@@ -1,20 +1,24 @@
 import React, { Component } from "react";
+import Talkmessage from "./Talkmessage";
 
 export default class Talkcontent extends Component {
   render() {
-    return (
-      <div className="row">
-        <div className="col s12">
-          <h1 className="talk_msg">first</h1>
-          <h1 className="talk_msg">second</h1>
-          <h1 className="talk_msg">third</h1>
-          <h1 className="talk_msg">fourth</h1>
-          <h1 className="talk_msg">fifth</h1>
-          <h1 className="talk_msg">sixth</h1>
-          <h1 className="talk_msg">seventh</h1>
-          <h1 className="talk_msg">eighth</h1>
-        </div>
-      </div>
-    );
+    const talkerContents = [
+      {
+        name: "supersun",
+        msg:
+          "帘下清歌帘外宴。虽爱新声，不见如花面。牙板数敲珠一串，梁尘暗落琉璃盏。桐树花深孤凤怨。渐遏遥天，不放行云散。坐上少年听不惯，玉山未倒肠先断。"
+      },
+      {
+        name: "supersun",
+        msg:
+          "帘下清歌帘外宴。虽爱新声，不见如花面。牙板数敲珠一串，梁尘暗落琉璃盏。桐树花深孤凤怨。渐遏遥天，不放行云散。坐上少年听不惯，玉山未倒肠先断。"
+      },
+      { name: "supersun", msg: "养天地正气，法古今完人" }
+    ];
+    const chatContents = talkerContents.map((talk, idx) => (
+      <Talkmessage key={idx} name={talk.name} msg={talk.msg} />
+    ));
+    return <div className="row">{chatContents}</div>;
   }
 }

@@ -2,22 +2,6 @@ import React, { Component } from "react";
 // import io from "socket.io-client";
 
 export default class Talkinput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: "",
-      viewheight: 0,
-      inputboxHeight: 0,
-      username: "",
-      message: "",
-      messages: []
-    };
-    this.handleInput = this.handleInput.bind(this);
-  }
-  handleInput(e) {
-    this.setState({ value: e.target.value });
-  }
-
   render() {
     return (
       <div className="row boxToSendMsg">
@@ -25,8 +9,8 @@ export default class Talkinput extends Component {
           <input
             className="inputToSendMsg"
             type="text"
-            value={this.state.value}
-            onChange={this.handleInput}
+            value={this.props.msg}
+            onChange={this.props.handleInput}
           />
         </div>
         <div className="col s3 removeLeftPadding">
@@ -35,6 +19,7 @@ export default class Talkinput extends Component {
             type="submit"
             name="action"
             value="test"
+            onClick={this.props.sendMessage}
           >
             发送
           </button>

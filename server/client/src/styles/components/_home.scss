@@ -15,15 +15,15 @@ body {
   .talk_header {
     height: 9%;
     width: 100%;
-    background-color: #e71c1c;
+    background-color: $page_bg;
   }
   .talk_middle {
     height: 82%;
     overflow-y: auto;
-    background-color: #e71c1c;
+    background-color: $talkcontent_bg;
   }
   .talk_footer {
     height: 9%;
-    background-color: #0c0a0a;
+    background-color: $page_bg;
   }
 }
