@@ -1,7 +1,4 @@
-@import "./base/_setting";
-@import "./components/_home";
-@import "./components/_header";
-@import "./components/_Inputcontent";
-@import "./components/_Inputchat";
-@import "./components/_Talkmessage";
-@import "./components/_avatar";
+@import "./base/_Setting";
+@import "./components/_Header";
+@import "./components/_Avatar";
+@import "../pages/Talk/style.scss";

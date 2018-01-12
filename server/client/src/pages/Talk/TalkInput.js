@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-// import io from "socket.io-client";
 
-export default class Talkinput extends Component {
+export default class TalkInput extends Component {
   componentDidMount() {
     document.addEventListener("keydown", this.onKeyPressed.bind(this));
-    // console.log(this.boxToSendMsg);
-    setTimeout(this.boxToSendMsg.scrollIntoView, 300);
+    this.TimeoutScrollID = setTimeout(() => {
+      this.boxToSendMsg.scrollIntoView();
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.TimeoutScrollID);
   }
 
   //发送键和enter绑定

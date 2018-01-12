@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 
 import "eruda/eruda.min.js";
 
-import App from "./conponents/App";
+import App from "./pages";
 import configureStore from "./store/configureStore";
 
 const store = configureStore();

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //登录界面需要有去注册界面的路由
 import { Link } from "react-router-dom";
 
-export default class Login extends Component {
+export default class PageLogin extends Component {
   render() {
     return (
       <div className="row">

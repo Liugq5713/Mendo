@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Talkheader from "./Header";
-import Talkcontent from "./Talkcontent";
-import Talkinput from "./Talkinput";
 import io from "socket.io-client";
-import { setInterval } from "core-js/library/web/timers";
+
+import Talkheader from "../../conponents/Header";
+import Talkcontent from "./TalkContent";
+import Talkinput from "./TalkInput";
+
 // import Chat from "./Chat";
-class Talkpage extends Component {
+class PageTalk extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -73,7 +74,7 @@ class Talkpage extends Component {
     return (
       <div className="page_talk">
         <div className="talk_header">
-          <Talkheader />
+          <Talkheader feature="back" />
         </div>
         <div
           className="talk_middle"
@@ -93,4 +94,4 @@ class Talkpage extends Component {
   }
 }
 
-export default Talkpage;
+export default PageTalk;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Avatar from "./Avatar";
-class Talkmessage extends Component {
+import Avatar from "../../conponents/Avatar";
+class TalkMessage extends Component {
   render() {
     //   左中两个结构
     return (
@@ -19,4 +19,4 @@ class Talkmessage extends Component {
     );
   }
 }
-export default Talkmessage;
+export default TalkMessage;

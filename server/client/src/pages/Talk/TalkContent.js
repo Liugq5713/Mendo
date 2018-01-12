@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Talkmessage from "./Talkmessage";
+import TalkMessage from "./TalkMessage";
 
-export default class Talkcontent extends Component {
+export default class TalkContent extends Component {
   render() {
     const chatContents = this.props.talkMsgContents.map((talk, idx) => (
-      <Talkmessage key={idx} name={talk.name} msg={talk.msg} />
+      <TalkMessage key={idx} name={talk.name} msg={talk.msg} />
     ));
     return <div className="row">{chatContents}</div>;
   }
