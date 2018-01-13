@@ -21,6 +21,7 @@ passport.use(
       // 对于其对象的具体的结构要清楚
       // console.log("profile", profile);
       // console.log("------------");
+      console.log("profile.username", profile.username);
       const user = await new User({
         username: profile.username,
         githubId: profile.id

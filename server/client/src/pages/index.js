@@ -9,7 +9,13 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 //在app.js 里面作为组织组件的入口，在这里处理路由
-import { BrowserRouter, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 import Home from "./Talk";
 import Login from "./Login";
@@ -19,15 +25,16 @@ import Test from "../conponents/Test";
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         {/* className="container"    */}
         <div id="componentWrapper">
+          {/* <PrivateRoute path="/protected" component={Protected} /> */}
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/test" component={Test} />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
