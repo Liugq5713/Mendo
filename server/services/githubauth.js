@@ -5,6 +5,15 @@ const User = mongoose.model("user");
 
 const keys = require("../config/keys");
 
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
 passport.use(
   new GitHubStrategy(
     {
@@ -18,14 +27,15 @@ passport.use(
       if (existingUser) {
         return done(null, existingUser);
       }
-      // 对于其对象的具体的结构要清楚
-      // console.log("profile", profile);
-      // console.log("------------");
-      console.log("profile.username", profile.username);
       const user = await new User({
         username: profile.username,
+        password: "none",
         githubId: profile.id
-      }).save();
+      })
+        .save()
+        .catch(err => {
+          done(err);
+        });
       done(null, user);
     }
   )

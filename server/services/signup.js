@@ -3,13 +3,14 @@ const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 
 const User = mongoose.model("user");
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
   });
 });
 
@@ -20,6 +21,7 @@ passport.use(
     if (existingUser) {
       done(null, existingUser);
     }
+
     const user = await new User({
       username: username,
       password: password
