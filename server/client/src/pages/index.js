@@ -17,7 +17,7 @@ import {
   withRouter
 } from "react-router-dom";
 
-// import Home from "./Talk";
+import Home from "./Room";
 import Login from "./Login";
 import Signup from "./Signup";
 import Test from "../conponents/Test";
@@ -29,7 +29,8 @@ export default class App extends Component {
       <Router>
         {/* className="container"    */}
         <div id="componentWrapper">
-          <Route path="/" exact strict component={AuthRedirect} />
+          {/* <Route path="/" exact strict component={AuthRedirect} /> */}
+          <Route path="/" exact strict component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/test" component={Test} />

@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 
+import Header from "../../conponents/Header";
+import Room from "./Room";
+
 class PageRoom extends Component {
   render() {
     return (
       <div>
-        <h1>PageRoom</h1>
+        <Header feature="menu" />
+        <Room />
+        <Room />
+        <Room />
       </div>
     );
   }

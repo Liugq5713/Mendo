@@ -9,7 +9,7 @@ class Header extends Component {
       <header className="header">
         <div className="nav">
           <a href="#" className="menu">
-            {this.props.feature == "back" || this.props.feature != "" ? (
+            {this.props.feature == "back" || this.props.feature == "" ? (
               <i className="fa fa-angle-left" aria-hidden="true" />
             ) : (
               <i className="fa fa-bars" aria-hidden="true" />

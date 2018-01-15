@@ -12,7 +12,8 @@ router.get(
   passport.authenticate("github", {
     //  TODO： 不是很完美，待解决
     failureRedirect: "http://localhost:8080/login",
-    successRedirect: "http://localhost:8080"
+    // successRedirect: "http://localhost:8080"
+    successRedirect: "http://10.224.5.55:8080"
   })
 );
 
