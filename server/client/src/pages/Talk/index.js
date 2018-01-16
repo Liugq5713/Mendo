@@ -16,10 +16,13 @@ class PageTalk extends Component {
       }
     };
     //socket  io 连接发送信息配置
-    // this.socket = io("10.224.5.55:5000");
-    this.socket = io("http://localhost:5000");
+    this.socket = io("10.224.5.55:5000/test");
+    // this.socket = io();
 
-    this.socket.on("RECEIVE_MESSAGE", function(data) {
+    this.socket.on("hi", (data) => {
+      console.log(data)
+    })
+    this.socket.on("RECEIVE_MESSAGE", function (data) {
       addMessage(data);
     });
     const addMessage = data => {
@@ -54,7 +57,7 @@ class PageTalk extends Component {
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   //-----------------------------------
-  componentWillMount() {}
+  componentWillMount() { }
   //按下发送键之后，将聊天内容区域滑动到底部
   scrollToBottom() {
     this.dom_talk_middle.scrollTop = this.dom_talk_middle.scrollHeight;
@@ -62,7 +65,7 @@ class PageTalk extends Component {
   //处理输入框的输入，并且存入state中
   handleInput(e) {
     e.persist();
-    this.setState(function(prevState, props) {
+    this.setState(function (prevState, props) {
       return {
         talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value }
       };

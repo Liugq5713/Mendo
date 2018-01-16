@@ -67,16 +67,30 @@ app.use("/api", checkuser);
 app.use("/auth", githubHandler);
 
 // ---- 聊天功能添加中
-io.on("connection", function(socket) {
-  console.log("a user connected");
-  socket.on("SEND_MESSAGE", function(data) {
+io.on("connection", (socket) => {
+  console.log("one person", socket.id);
+
+  socket.on("SEND_MESSAGE", (data) => {
     console.log("data", data);
     io.emit("RECEIVE_MESSAGE", data);
   });
-  socket.on("disconnect", function() {
+  socket.on("disconnect", () => {
     console.log("user disconnected");
   });
 });
+
+const nsp = io.of("/test");
+nsp.on("connection", (socket) => {
+  // console.log("test connected");
+  socket.emit('hi', 'everyone!');
+})
+
+const nsp2 = io.of("/test2");
+nsp2.on("connection", (socket) => {
+  console.log("test2 connected");
+  socket.emit('hi', 'everyone!');
+})
+
 
 //监听
 server.listen("5000", () => {

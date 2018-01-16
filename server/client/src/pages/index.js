@@ -17,7 +17,7 @@ import {
   withRouter
 } from "react-router-dom";
 
-import Home from "./Room";
+import Home from "./Talk";
 import Login from "./Login";
 import Signup from "./Signup";
 import Test from "../conponents/Test";
@@ -29,7 +29,7 @@ export default class App extends Component {
       <Router>
         {/* className="container"    */}
         <div id="componentWrapper">
-          {/AuthRedirect用于控制未登录状态下显示的界面*  */}
+          {/*AuthRedirect用于控制未登录状态下显示的界面  */}
           {/* <Route path="/" exact strict component={AuthRedirect} /> */}
           <Route path="/" exact strict component={Home} />
           <Route exact path="/login" component={Login} />
