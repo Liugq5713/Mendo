@@ -13,3 +13,4 @@ export const checkUserAsync = () => async dispatch => {
   console.log("action:", res.data.username);
   dispatch({ type: "CHECK_USER", username: res.data.username });
 };
+

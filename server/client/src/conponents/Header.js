@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 // 组件 和 redux 进行连接
 import { connect } from "react-redux";
 
@@ -8,13 +9,17 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="nav">
-          <a href="#" className="menu">
+          <div className="menu">
             {this.props.feature == "back" || this.props.feature == "" ? (
-              <i className="fa fa-angle-left" aria-hidden="true" />
+              // 后退按钮
+              <Link to="/">
+                <i className="fa fa-angle-left" aria-hidden="true" />
+              </Link>
             ) : (
-              <i className="fa fa-bars" aria-hidden="true" />
-            )}
-          </a>
+                // 菜单按钮
+                <i className="fa fa-bars" aria-hidden="true" />
+              )}
+          </div>
           <div className="avatarWrapper">
             <Avatar />
           </div>

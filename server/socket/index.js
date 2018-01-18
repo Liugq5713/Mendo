@@ -10,18 +10,8 @@ module.exports = function (io) {
         socket.on("disconnect", () => {
             console.log("user disconnected");
         });
+        socket.on("join", (data) => {
+            console.log(data)
+        })
     });
-
-    const nsp = io.of("/test");
-    nsp.on("connection", (socket) => {
-        // console.log("test connected");
-        socket.emit('hi', 'everyone!');
-    })
-
-    const nsp2 = io.of("/test2");
-    nsp2.on("connection", (socket) => {
-        console.log("test2 connected");
-        socket.emit('hi', 'everyone!');
-    })
-
 }

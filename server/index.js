@@ -13,9 +13,12 @@ const keys = require("./config/keys");
 
 require("./db")
 require("./models/User");
+require("./models/Room");
 require("./services/signup");
 require("./services/login");
 require("./services/githubauth");
+
+// ----
 
 var app = express();
 var server = http.createServer(app);
@@ -39,6 +42,7 @@ app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
+app.use("/", require("./services/room").getRoomList)
 
 //监听
 server.listen("5000", () => {

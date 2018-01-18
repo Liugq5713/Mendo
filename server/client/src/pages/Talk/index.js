@@ -16,7 +16,7 @@ class PageTalk extends Component {
       }
     };
     //socket  io 连接发送信息配置
-    this.socket = io("10.224.5.55:5000/test");
+    this.socket = io("10.224.5.55:5000");
     // this.socket = io();
 
     this.socket.on("hi", (data) => {
