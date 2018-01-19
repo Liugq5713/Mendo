@@ -1,0 +1,1 @@
+export const GET_ROOMLIST = "GET_ROOMLIST"

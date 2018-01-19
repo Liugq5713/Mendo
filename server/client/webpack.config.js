@@ -59,6 +59,9 @@ module.exports = {
       {
         path: "/api/*",
         target: "http://localhost:5000"
+      }, {
+        path: "/api/room/*",
+        target: "http://localhost:5000"
       },
       {
         path: "/auth/*",

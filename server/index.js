@@ -23,7 +23,8 @@ require("./services/githubauth");
 var app = express();
 var server = http.createServer(app);
 const io = require("socket.io").listen(server);
-require("./socket/index")(io)
+
+const connectIO = require("./socket")
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -42,8 +43,8 @@ app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
-app.use("/", require("./services/room").getRoomList)
-
+app.get("/api/getroomlist", require("./services/room").getRoomList)
+app.get("/api/room/:roomId", require("./socket")(io))
 //监听
 server.listen("5000", () => {
   console.log("port 5000 is listening");

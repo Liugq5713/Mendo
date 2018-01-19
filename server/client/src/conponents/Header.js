@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// 组件 和 redux 进行连接
-import { connect } from "react-redux";
 
 import Avatar from "./Avatar";
 class Header extends Component {

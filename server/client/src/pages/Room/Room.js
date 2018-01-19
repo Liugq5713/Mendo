@@ -15,8 +15,10 @@ class Room extends Component {
     socket.emit('join', "test");
   }
   render() {
+    const roomId = this.props.roomId;
+    const roomurl = `/api/room/${roomId}`;
     return (
-      <Link to="/talk">
+      <a href={roomurl} >
         <div className="col s12">
           <div className="card horizontal" onClick={this.joinRoom}>
             <div className="card-image">
@@ -32,7 +34,7 @@ class Room extends Component {
             </div>
           </div>
         </div>
-      </Link>
+      </ a>
 
     );
   }
