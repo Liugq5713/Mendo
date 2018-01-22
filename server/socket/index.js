@@ -1,20 +1,22 @@
 module.exports = function (io) {
-    // ---- 聊天功能添加中
-    return function (req, res, next) {
-        console.log("req", req.params.roomId)
-        io.on("connection", (socket) => {
-            console.log("one person", socket.id);
-            socket.on("SEND_MESSAGE", (data) => {
+    io.on("connection", (socket) => {
+        console.log("one person", socket.id);
+        socket.join(roomId);
+        console.log("has joined")
+        socket.to(roomId).emit(
+            "connectToRoom",
+            "someone has joined"
+        );
+        socket.to(roomId).on(
+            "SEND_MESSAGE",
+            (data) => {
                 console.log("data", data);
                 io.emit("RECEIVE_MESSAGE", data);
             });
-            socket.on("disconnect", () => {
-                console.log("user disconnected");
-            });
-            socket.on("join", (data) => {
-                console.log(data)
-            })
+        socket.on("disconnect", () => {
+            console.log("user disconnected");
         });
-        res.redirect('/talk');
-    }
+    });
+    res.redirect('/talk');
+}
 }

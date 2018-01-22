@@ -5,7 +5,6 @@ import Header from "../../conponents/Header";
 import Room from "./Room";
 
 class PageRoom extends Component {
-
   render() {
     const RoomLists = this.props.roomlist.map(room =>
       <li key={room._id}>

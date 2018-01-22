@@ -19,13 +19,16 @@ require("./services/login");
 require("./services/githubauth");
 
 // ----
-
+// express服务启动，io且挂载到服务器上
 var app = express();
 var server = http.createServer(app);
 const io = require("socket.io").listen(server);
+require("./socket")(io)
 
-const connectIO = require("./socket")
+//设置常量
+app.locals.rooms = [];
 
+// 设置cookie
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   expressSession({
@@ -39,6 +42,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+//组织路由
 app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));

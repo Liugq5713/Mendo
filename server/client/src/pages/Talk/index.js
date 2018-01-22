@@ -15,11 +15,11 @@ class PageTalk extends Component {
         msg: ""
       }
     };
-    //socket  io 连接发送信息配置
+    //socket  io 连接发送信息  配置
     this.socket = io("10.224.5.55:5000");
     // this.socket = io();
 
-    this.socket.on("hi", (data) => {
+    this.socket.on("connectToRoom", (data) => {
       console.log(data)
     })
     this.socket.on("RECEIVE_MESSAGE", function (data) {
@@ -42,22 +42,9 @@ class PageTalk extends Component {
       setTimeout(this.scrollToBottom, 0);
     };
 
-    // this.sendMessage = ev => {
-    //   ev.preventDefault();
-    //   this.socket.emit("SEND_MESSAGE", {
-    //     message: this.state.talkMsgContent
-    //   });
-    //   this.setState({
-    //     talkMsgContent: { ...this.state.talkMsgContent, msg: "" }
-    //   });
-    //   this.scrollToBottom();
-    // };
-
     this.handleInput = this.handleInput.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
-  //-----------------------------------
-  componentWillMount() { }
   //按下发送键之后，将聊天内容区域滑动到底部
   scrollToBottom() {
     this.dom_talk_middle.scrollTop = this.dom_talk_middle.scrollHeight;

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --json --profile>stats.json",
     "start": "webpack-dev-server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
