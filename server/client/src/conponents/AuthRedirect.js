@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { checkUserAsync, test } from "../actions";
 
 import Login from "../pages/Login";
-import Room from "../pages/Room";
+import Room from "../pages/Rooms";
 
 class AuthRedirect extends Component {
   constructor(props) {

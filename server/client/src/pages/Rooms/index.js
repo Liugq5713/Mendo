@@ -6,17 +6,16 @@ import Room from "./Room";
 
 class PageRoom extends Component {
   render() {
-    const RoomLists = this.props.roomlist.map(room =>
+    const roomlist = this.props.roomlist;
+    const RoomList = roomlist.map(room => (
       <li key={room._id}>
         <Room roomname={room.roomname} roomId={room._id} />
       </li>
-    )
+    ));
     return (
       <div>
         <Header feature="menu" />
-        <ul>
-          {RoomLists}
-        </ul>
+        <ul>{RoomList}</ul>
       </div>
     );
   }

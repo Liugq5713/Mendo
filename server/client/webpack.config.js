@@ -50,7 +50,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "public"),
     port: 8080,
-    host: "10.224.5.55",
+    // host: "10.224.5.55",
     // host: "10.255.131.81",
     // host: "192.168.137.1",
     open: true,
@@ -59,7 +59,8 @@ module.exports = {
       {
         path: "/api/*",
         target: "http://localhost:5000"
-      }, {
+      },
+      {
         path: "/api/room/*",
         target: "http://localhost:5000"
       },

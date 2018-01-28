@@ -17,10 +17,10 @@ import {
   withRouter
 } from "react-router-dom";
 
-import Home from "./Room";
+import Home from "./Rooms";
 import Login from "./Login";
 import Signup from "./Signup";
-import Talk from "./Talk"
+import Talk from "./Talk";
 import Test from "../conponents/Test";
 import AuthRedirect from "../conponents/AuthRedirect";
 

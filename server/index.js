@@ -11,7 +11,7 @@ const GitHubStrategy = require("passport-github");
 const LocalStrategy = require("passport-local");
 const keys = require("./config/keys");
 
-require("./db")
+require("./db");
 require("./models/User");
 require("./models/Room");
 require("./services/signup");
@@ -23,7 +23,7 @@ require("./services/githubauth");
 var app = express();
 var server = http.createServer(app);
 const io = require("socket.io").listen(server);
-require("./socket")(io)
+require("./socket")(io);
 
 //设置常量
 app.locals.rooms = [];
@@ -47,8 +47,8 @@ app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
-app.get("/api/getroomlist", require("./services/room").getRoomList)
-app.get("/api/room/:roomId", require("./socket")(io))
+app.get("/api/getroomlist", require("./services/room").initRoom);
+app.get("/api/getroomlist", require("./services/room").getRoomList);
 //监听
 server.listen("5000", () => {
   console.log("port 5000 is listening");
