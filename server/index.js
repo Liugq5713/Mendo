@@ -47,7 +47,7 @@ app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
-app.get("/api/getroomlist", require("./services/room").initRoom);
+// app.get("/api/getroomlist", require("./services/room").initRoom);
 app.get("/api/getroomlist", require("./services/room").getRoomList);
 //监听
 server.listen("5000", () => {
