@@ -10,9 +10,9 @@ class Room extends Component {
 
   render() {
     const roomId = this.props.roomId;
-    const roomurl = `/api/room/${roomId}`;
+    const roomurl = `/room/${roomId}`;
     return (
-      <a href={roomurl} >
+      <Link to={roomurl} >
         <div className="col s12">
           <div className="card horizontal">
             <div className="card-image">
@@ -28,7 +28,7 @@ class Room extends Component {
             </div>
           </div>
         </div>
-      </ a>
+      </Link>
     );
   }
 }

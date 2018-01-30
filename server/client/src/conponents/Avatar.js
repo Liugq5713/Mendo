@@ -1,4 +1,5 @@
-import avatar from "../images/avatar.jpg";
+import avatar from "./avatar.jpg";
+// let avatar = require("./avatar.jpg")
 
 import React, { Component } from "react";
 
@@ -7,7 +8,7 @@ export default class Talkcontent extends Component {
     return (
       <div>
         <a href="#" className="avatar">
-          <img src={avatar} alt="avatar" className="circle circle__style" />
+          <img src={`/${avatar}`} alt="avatar" className="circle circle__style" />
         </a>
       </div>
     );

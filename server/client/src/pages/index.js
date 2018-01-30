@@ -35,7 +35,7 @@ export default class App extends Component {
           <Route path="/" exact strict component={Home} />
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/talk" component={Talk} />
+          <Route path="/room/:id" component={Talk} />
           <Route path="/test" component={Test} />
         </div>
       </Router>

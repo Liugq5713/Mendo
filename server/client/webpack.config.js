@@ -26,15 +26,20 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /.(woff|woff2|eot|ttf)$/,
         loader: "url-loader?limit=100000"
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
-            loader: "file-loader",
-            options: {}
+            loader: "url-loader",
+            options: {
+              name: "[hash:8][name].[ext]",
+              limit: 8192,
+              // publicPath: "public/",
+              // outputPath: "images/"
+            }
           }
         ]
       },

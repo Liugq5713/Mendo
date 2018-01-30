@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
 
-import Talkheader from "../../conponents/Header";
+import Header from "../../conponents/Header";
 import Talkcontent from "./TalkContent";
 import Talkinput from "./TalkInput";
 
@@ -64,7 +64,7 @@ class PageTalk extends Component {
     return (
       <div className="page_talk">
         <div className="talk_header">
-          <Talkheader feature="back" />
+          <Header feature="back" />
         </div>
         <div
           className="talk_middle"
