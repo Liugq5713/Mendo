@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import io from "socket.io-client";
 
 import Header from "../../conponents/Header";
 import Talkcontent from "./TalkContent";
@@ -16,13 +15,14 @@ class PageTalk extends Component {
       }
     };
     //socket  io 连接发送信息  配置
-    this.socket = io("10.224.5.55:5000");
-    // this.socket = io();
 
-    this.socket.on("connectToRoom", (data) => {
+    const socket = this.props.socket;
+    console.log('socket', socket)
+
+    socket.on("connectToRoom", (data) => {
       console.log(data)
     })
-    this.socket.on("RECEIVE_MESSAGE", function (data) {
+    socket.on("RECEIVE_MESSAGE", function (data) {
       addMessage(data);
     });
     const addMessage = data => {
@@ -33,7 +33,7 @@ class PageTalk extends Component {
     };
 
     this.sendMessage = () => {
-      this.socket.emit("SEND_MESSAGE", {
+      socket.emit("SEND_MESSAGE", {
         message: this.state.talkMsgContent
       });
       this.setState({

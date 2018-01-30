@@ -1,6 +1,6 @@
 module.exports = function (io) {
   io.on("connection", socket => {
-    console.log("one person", socket.id);
+    console.log("one person join", socket.id);
     // 需要一个roomid列表
     // socket.join(roomId);
     // console.log("has joined");

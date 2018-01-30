@@ -1,5 +1,4 @@
-import avatar from "./avatar.jpg";
-// let avatar = require("./avatar.jpg")
+import avatar from "../images/avatar.jpg";
 
 import React, { Component } from "react";
 
