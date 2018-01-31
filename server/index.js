@@ -24,6 +24,7 @@ var app = express();
 var server = http.createServer(app);
 const io = require("socket.io").listen(server);
 require("./socket")(io);
+// require("./socket/test")(io);
 
 //设置常量
 app.locals.rooms = [];
@@ -49,6 +50,11 @@ app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
 // app.get("/api/getroomlist", require("./services/room").initRoom);
 app.get("/api/getroomlist", require("./services/room").getRoomList);
+//对于socket进行处理
+app.get("/api/room/:roomId", (req, res, next) => {
+  console.log("here")
+  res.redirect("/room/" + req.params.roomId)
+})
 //监听
 server.listen("5000", () => {
   console.log("port 5000 is listening");

@@ -4,6 +4,8 @@ import Header from "../../conponents/Header";
 import Talkcontent from "./TalkContent";
 import Talkinput from "./TalkInput";
 
+import socket from "../../actions/socket"
+
 // import Chat from "./Chat";
 class PageTalk extends Component {
   constructor(props) {
@@ -15,10 +17,6 @@ class PageTalk extends Component {
       }
     };
     //socket  io 连接发送信息  配置
-
-    const socket = this.props.socket;
-    console.log('socket', socket)
-
     socket.on("connectToRoom", (data) => {
       console.log(data)
     })

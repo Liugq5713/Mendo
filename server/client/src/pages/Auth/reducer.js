@@ -6,7 +6,7 @@ const stateInit = {
 
 export default (state = stateInit, action) => {
   switch (action.type) {
-    case "CHECK_USER":
+    case "GET_USERNAME":
       return {
         ...state,
         profile: {
@@ -14,8 +14,6 @@ export default (state = stateInit, action) => {
           username: action.username
         }
       };
-    case "TEST":
-      return state;
     default:
       return state;
   }

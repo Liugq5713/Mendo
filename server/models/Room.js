@@ -11,6 +11,10 @@ const RoomSchema = new mongoose.Schema({
     creator: {
         type: String
     },
+    isPublic: {
+        type: Boolean,
+        default: true
+    },
     createDate: {
         type: Date,
         default: getTime()

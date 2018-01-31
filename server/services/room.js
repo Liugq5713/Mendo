@@ -30,5 +30,13 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
+  },
+  getRoomlist: async function () {
+    try {
+      let roomlists = await Room.find({}, { roomname: true });
+      return roomlists;
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
