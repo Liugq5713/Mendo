@@ -6,6 +6,8 @@ import Talkinput from "./TalkInput";
 
 import socket from "../../actions/socket"
 
+import { connect } from "react-redux";
+
 // import Chat from "./Chat";
 class PageTalk extends Component {
   constructor(props) {
@@ -13,24 +15,30 @@ class PageTalk extends Component {
     this.state = {
       talkMsgContents: [],
       talkMsgContent: {
+        username: this.props.username,
         msg: ""
       }
     };
+    console.log('props.username-----', props.username)
+    console.log('props.username-----', this.props.username)
     //socket  io 连接发送信息  配置
     socket.on("connectToRoom", (data) => {
       console.log(data)
     })
+
+    // socket接受消息，然后将消息添加到state
     socket.on("RECEIVE_MESSAGE", function (data) {
       addMessage(data);
     });
     const addMessage = data => {
       console.log(data);
       this.setState({
-        talkMsgContents: [...this.state.talkMsgContents, data.message]
+        talkMsgContents: this.state.talkMsgContents.concat(data.message)
       });
     };
-
+    // 发送消息
     this.sendMessage = () => {
+      console.log('this.state.talkMsgContent', this.state.talkMsgContent)
       socket.emit("SEND_MESSAGE", {
         message: this.state.talkMsgContent
       });
@@ -52,12 +60,13 @@ class PageTalk extends Component {
     e.persist();
     this.setState(function (prevState, props) {
       return {
-        talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value }
+        talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value, username: this.props.username }
       };
     });
   }
 
   render() {
+    console.log('state', this.state)
     const talkMsgContents = this.state.talkMsgContents;
     return (
       <div className="page_talk">
@@ -82,4 +91,8 @@ class PageTalk extends Component {
   }
 }
 
-export default PageTalk;
+const mapStateToprops = state => ({
+  username: state.auth.profile.username
+})
+
+export default connect(mapStateToprops)(PageTalk);

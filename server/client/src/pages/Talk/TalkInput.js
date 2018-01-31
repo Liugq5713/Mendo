@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class TalkInput extends Component {
   componentDidMount() {
+    // 
     document.addEventListener("keydown", this.onKeyPressed.bind(this));
     this.TimeoutScrollID = setTimeout(() => {
       this.boxToSendMsg.scrollIntoView();

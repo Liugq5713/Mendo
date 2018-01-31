@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Avatar from "../../conponents/Avatar";
 
 import { connect } from "react-redux"
+
 // 添加
 class TalkMessage extends Component {
   render() {
@@ -12,7 +13,7 @@ class TalkMessage extends Component {
           <Avatar />
         </div>
         <div className="col s8">
-          <div className="talkerName">{username}</div>
+          <div className="talkerName">{this.props.username}</div>
           <div className="talkMsgWrapper">
             <div className="triangle" />
             <div className="talkmsgdetail">{this.props.msg}</div>

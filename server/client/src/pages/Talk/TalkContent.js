@@ -3,9 +3,12 @@ import TalkMessage from "./TalkMessage";
 
 export default class TalkContent extends Component {
   render() {
-    const chatContents = this.props.talkMsgContents.map((talk, idx) => (
-      <TalkMessage key={idx} name={talk.name} msg={talk.msg} />
-    ));
+    const chatContents = this.props.talkMsgContents.map((talk, idx) => {
+      console.log('talk', talk)
+      return (
+        <TalkMessage key={idx} usernaem={talk.username} msg={talk.msg} />
+      )
+    });
     return <div className="row">{chatContents}</div>;
   }
 }
