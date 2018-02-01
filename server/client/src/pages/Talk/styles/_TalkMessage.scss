@@ -1,29 +1,55 @@
-.talkmsgWrapper {
+.talkMsgWrapper {
+  display: flex;
+  width: 100%;
   .avatarWrapper {
+    flex-basis: 15%;
+    padding-left: 10px;
     margin-top: 1rem;
   }
-  .talkerName {
-    color: $talkerName_font_color;
-    margin-bottom: 0.2rem;
+  .sliderWrapper{
+    flex-basis: 70%;
+    .talkerName {
+      color: $talkerName_font_color;
+      margin-bottom: 0.2rem;
+    }
+    .talkDialog {
+      display: flex;
+      color: $talkmsg_font_color;
+      background-color: $talkinputbox_bg;
+      .triangle {
+        align-self: flex-start;
+        margin-left: -0.38rem;
+        margin-top: 8px;
+        font-size: 0;
+        width: 0px;
+        height: 0px;
+        border: solid 0.5rem;
+        border-color: $talkinputbox_bg;
+        transform: rotate(45deg);
+      }
+      .talkMsg {
+        width: 100%;
+        word-wrap: break-word; 
+        border-radius: 5px;
+        padding: 0.3rem;
+      }
+    }
   }
-  .talkMsgWrapper {
-    display: flex;
+}
 
-    color: $talkmsg_font_color;
-    background-color: $talkinputbox_bg;
-    .triangle {
-      margin-left: -0.38rem;
-      margin-top: 8px;
-      font-size: 0;
-      width: 0px;
-      height: 0px;
-      border: solid 0.5rem;
-      border-color: $talkinputbox_bg;
-      transform: rotate(45deg);
-    }
-    .talkmsgdetail {
-      border-radius: 5px;
-      padding: 0.3rem;
+.talkMsgWrapper__self{
+  flex-direction: row-reverse;
+
+  .sliderWrapper__self{
+    text-align: right;
+    .talkDialog__self{
+      text-align: left;
+        .triangle__self{
+          position: relative;
+          left: 3px;
+        }
     }
   }
+ 
+
 }

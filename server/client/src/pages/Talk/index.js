@@ -68,6 +68,7 @@ class PageTalk extends Component {
   render() {
     console.log('state', this.state)
     const talkMsgContents = this.state.talkMsgContents;
+    const username = this.state.talkMsgContent.username;
     return (
       <div className="page_talk">
         <div className="talk_header">
@@ -77,7 +78,7 @@ class PageTalk extends Component {
           className="talk_middle"
           ref={dom_talk_middle => (this.dom_talk_middle = dom_talk_middle)}
         >
-          <Talkcontent talkMsgContents={talkMsgContents} />
+          <Talkcontent talkMsgContents={talkMsgContents} username={username} />
         </div>
         <div className="talk_footer">
           <Talkinput
