@@ -15,6 +15,7 @@
     .talkDialog {
       display: flex;
       color: $talkmsg_font_color;
+        border-radius: 4px;
       background-color: $talkinputbox_bg;
       .triangle {
         align-self: flex-start;
@@ -24,6 +25,7 @@
         width: 0px;
         height: 0px;
         border: solid 0.5rem;
+        border-radius: 2px;
         border-color: $talkinputbox_bg;
         transform: rotate(45deg);
       }

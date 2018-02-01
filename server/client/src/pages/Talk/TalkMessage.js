@@ -5,9 +5,7 @@ import Avatar from "../../conponents/Avatar";
 class TalkMessage extends Component {
   render() {
     const username = this.props.username;
-    console.log('username', username)
     const isSelf = this.props.isSelf;
-
     return (
       (isSelf) ? (<div className="talkMsgWrapper  talkMsgWrapper__self">
         <div className="avatarWrapper avatarWrapper__self">

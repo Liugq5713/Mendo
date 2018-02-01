@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import Header from "../../conponents/Header";
-import Talkcontent from "./TalkContent";
-import Talkinput from "./TalkInput";
+import TalkContent from "./TalkContent";
+import TalkInput from "./TalkInput";
 
 import socket from "../../actions/socket"
 
@@ -15,12 +15,11 @@ class PageTalk extends Component {
     this.state = {
       talkMsgContents: [],
       talkMsgContent: {
-        username: this.props.username,
+        username: "",
         msg: ""
       }
     };
-    console.log('props.username-----', props.username)
-    console.log('props.username-----', this.props.username)
+
     //socket  io 连接发送信息  配置
     socket.on("connectToRoom", (data) => {
       console.log(data)
@@ -31,30 +30,28 @@ class PageTalk extends Component {
       addMessage(data);
     });
     const addMessage = data => {
-      console.log(data);
       this.setState({
         talkMsgContents: this.state.talkMsgContents.concat(data.message)
       });
     };
     // 发送消息
     this.sendMessage = () => {
-      console.log('this.state.talkMsgContent', this.state.talkMsgContent)
       socket.emit("SEND_MESSAGE", {
         message: this.state.talkMsgContent
       });
       this.setState({
         talkMsgContent: { ...this.state.talkMsgContent, msg: "" }
       });
-      setTimeout(this.scrollToBottom, 0);
+      // setTimeout(this.scrollToBottom, 0);
     };
 
     this.handleInput = this.handleInput.bind(this);
-    this.scrollToBottom = this.scrollToBottom.bind(this);
+    // this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   //按下发送键之后，将聊天内容区域滑动到底部
-  scrollToBottom() {
-    this.dom_talk_middle.scrollTop = this.dom_talk_middle.scrollHeight;
-  }
+  // scrollToBottom() {
+  //   this.dom_talk_middle.scrollTop = this.dom_talk_middle.scrollHeight;
+  // }
   //处理输入框的输入，并且存入state中
   handleInput(e) {
     e.persist();
@@ -66,7 +63,6 @@ class PageTalk extends Component {
   }
 
   render() {
-    console.log('state', this.state)
     const talkMsgContents = this.state.talkMsgContents;
     const username = this.state.talkMsgContent.username;
     return (
@@ -78,10 +74,13 @@ class PageTalk extends Component {
           className="talk_middle"
           ref={dom_talk_middle => (this.dom_talk_middle = dom_talk_middle)}
         >
-          <Talkcontent talkMsgContents={talkMsgContents} username={username} />
+          <TalkContent
+            talkMsgContents={talkMsgContents}
+            username={username}
+          />
         </div>
         <div className="talk_footer">
-          <Talkinput
+          <TalkInput
             msg={this.state.talkMsgContent.msg}
             sendMessage={this.sendMessage}
             handleInput={this.handleInput}
