@@ -19,10 +19,9 @@ class PageTalk extends Component {
         msg: ""
       }
     };
-
     //socket  io 连接发送信息  配置
-    socket.on("connectToRoom", (data) => {
-      console.log(data)
+    socket.on("connect", () => {
+      socket.emit("join", "one join--has joined--" + this.props.match.params.roomId)
     })
 
     // socket接受消息，然后将消息添加到state
@@ -36,22 +35,17 @@ class PageTalk extends Component {
     };
     // 发送消息
     this.sendMessage = () => {
-      socket.emit("SEND_MESSAGE", {
+      socket.send({
         message: this.state.talkMsgContent
       });
       this.setState({
         talkMsgContent: { ...this.state.talkMsgContent, msg: "" }
       });
-      // setTimeout(this.scrollToBottom, 0);
     };
 
     this.handleInput = this.handleInput.bind(this);
-    // this.scrollToBottom = this.scrollToBottom.bind(this);
   }
-  //按下发送键之后，将聊天内容区域滑动到底部
-  // scrollToBottom() {
-  //   this.dom_talk_middle.scrollTop = this.dom_talk_middle.scrollHeight;
-  // }
+
   //处理输入框的输入，并且存入state中
   handleInput(e) {
     e.persist();
@@ -62,9 +56,11 @@ class PageTalk extends Component {
     });
   }
 
+
   render() {
     const talkMsgContents = this.state.talkMsgContents;
-    const username = this.state.talkMsgContent.username;
+    const username = this.props.username;
+
     return (
       <div className="page_talk">
         <div className="talk_header">

@@ -6,15 +6,16 @@ module.exports = function (io) {
     const url = socket.request.headers.referer;
     const roomId = url.split("/").pop();
     // 需要一个roomid列表
-    socket.join(roomId);
-    console.log('roomId', roomId)
-
-    socket.to(roomId).emit("connectToRoom", "someone has joined");
-
-    socket.to(roomId).on("SEND_MESSAGE", data => {
-      console.log("data", data);
-      io.emit("RECEIVE_MESSAGE", data);
+    socket.on("join", (data) => {
+      socket.join(roomId);
+      console.log("server " + roomId);
     });
+
+    socket.on("message", (data) => {
+      console.log("hi")
+      io.to(roomId).emit("RECEIVE_MESSAGE", data);
+    })
+
 
     socket.on('leave', function () {
       socket.emit('disconnect');

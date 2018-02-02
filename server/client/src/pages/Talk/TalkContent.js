@@ -8,8 +8,6 @@ export default class TalkContent extends Component {
   }
   componentDidUpdate() {
     if (this.TalkContainer != undefined) {
-      console.log('this.TalkContainer.scrollHeight', this.TalkContainer.scrollHeight)
-      console.log('this.TalkContainer.scrollTop', this.TalkContainer.scrollTop)
       this.scrollToBottom();
     }
   }
