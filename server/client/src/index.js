@@ -9,6 +9,10 @@ import "eruda/eruda.min.js";
 import App from "./pages";
 import configureStore from "./store/configureStore";
 
+if (process.env.NODE_ENV !== "production") {
+  console.log("Happy Coding!");
+}
+
 const store = configureStore();
 
 ReactDOM.render(

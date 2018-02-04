@@ -1,3 +1,4 @@
 import io from "socket.io-client";
+import { socketIP } from "../config/socket";
 
-export default io("10.224.5.55:5000");
+export default io(socketIP);

@@ -4,10 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "webpack  --config ./etc/webpack.prod.js",
+    "start": "webpack-dev-server --config  ./etc/webpack.dev.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -43,9 +41,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "@storybook/react": "^3.3.9",
-    "@storybook/addon-actions": "^3.3.9",
-    "@storybook/addon-links": "^3.3.9",
-    "@storybook/addons": "^3.3.9"
+    "clean-webpack-plugin": "^0.1.18",
+    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-template": "^6.1.0"
   }
 }
