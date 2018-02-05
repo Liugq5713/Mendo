@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Avatar from "./Avatar";
+// import Avatar from "./Avatar";
+import Menu from "./Menu"
 class Header extends Component {
   render() {
+    $(".button-collapse").sideNav();
     return (
       <header className="header">
         <div className="nav">
@@ -15,12 +17,12 @@ class Header extends Component {
               </Link>
             ) : (
                 // 菜单按钮
-                <i className="fa fa-bars" aria-hidden="true" />
+                <Menu />
               )}
           </div>
-          <div className="avatarWrapper">
+          {/* <div className="avatarWrapper">
             <Avatar />
-          </div>
+          </div> */}
         </div>
       </header>
     );

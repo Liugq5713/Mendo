@@ -31,8 +31,6 @@ module.exports = {
             options: {
               name: "[hash:8][name].[ext]",
               limit: 8192
-              // publicPath: "public/",
-              // outputPath: "images/"
             }
           }
         ]
@@ -56,8 +54,6 @@ module.exports = {
       appMountId: "app",
       mobile: true,
       baseHref: "http://localhost:8080/",
-      // mobile:
-      // '<meta name="viewport" content="width=device-width,height=device-height,maximum-scale=1.0,user-scalable=no">',
       lang: "zh-cmn-Hans"
     })
   ]

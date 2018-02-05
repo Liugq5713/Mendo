@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
-import room from "../../images/room.jpg";
+import room from "../../images/room_default.jpg";
 
 class Room extends Component {
   constructor(props) {
@@ -19,10 +19,10 @@ class Room extends Component {
               <img src={room} />
             </div>
             <div className="card-stacked">
-              <div className="card-content">
-                <p>I am a very simple card.</p>
+              <div className="card-content card-content__modify">
+                <p>Mendo</p>
               </div>
-              <div className="card-action">
+              <div className="card-action card-action__modify">
                 <p href="#">This is a link</p>
               </div>
             </div>

@@ -48,8 +48,9 @@ app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
 app.use("/auth", require("./routers/githubauth"));
-// app.get("/api/getroomlist", require("./services/room").initRoom);
-app.get("/api/getroomlist", require("./services/room").getRoomList);
+//初始化房间，并且渲染房间的列表
+app.get("/api/getroomlist", require("./services/room").initRoom);
+app.get("/api/getroomlist", require("./services/room").getRoomlist_MW);
 //对于socket进行处理
 app.get("/api/room/:roomId", (req, res, next) => {
   console.log("here")

@@ -5,8 +5,8 @@ export default class TalkInput extends Component {
     // 
     document.addEventListener("keydown", this.onKeyPressed.bind(this));
     this.TimeoutScrollID = setTimeout(() => {
-      this.boxToSendMsg.scrollIntoView();
-    }, 300);
+      this.boxToSendMsg.scrollIntoView(true);
+    }, 500);
   }
 
   componentWillUnmount() {

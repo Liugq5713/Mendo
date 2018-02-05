@@ -1,11 +1,15 @@
 {
-  "presets": ["env", "react", "stage-2"],
+  "presets": [
+    "env",
+    "react",
+    "stage-2"
+  ],
   "plugins": [
     "transform-class-properties",
     [
       "transform-runtime",
       {
-        "polyfill": false,
+        "polyfill": true,
         "regenerator": true
       }
     ]

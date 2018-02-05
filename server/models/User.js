@@ -14,6 +14,9 @@ const UserSchema = new mongoose.Schema({
   githubId: {
     type: String
   },
+  createRoomList: {
+    type: Array
+  },
   createDate: {
     type: Date,
     default: getTime()
