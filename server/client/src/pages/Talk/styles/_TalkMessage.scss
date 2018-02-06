@@ -1,9 +1,11 @@
+//左侧栏的样式调整，也就是自己看到别人发的样式
 .talkMsgWrapper {
+  padding-top: 1rem;
   display: flex;
   width: 100%;
   .avatarWrapper {
     flex-basis: 15%;
-    padding-left: 10px;
+    text-align: center;
     margin-top: 1rem;
   }
   .sliderWrapper{
@@ -14,42 +16,47 @@
     }
     .talkDialog {
       display: flex;
+      justify-content:flex-start;
       color: $talkmsg_font_color;
-        border-radius: 4px;
-      background-color: $talkinputbox_bg;
+      border-radius: 4px;
+       .talkMsg {
+        padding: 0.6rem;
+        max-width: 100%;
+        border-radius: 5px;
+        word-wrap: break-word; 
+        word-break:break-all;
+        background-color: $talkmsg_bg;
+      }
       .triangle {
-        align-self: flex-start;
-        margin-left: -0.38rem;
+        margin-right: -0.50rem;
         margin-top: 8px;
         font-size: 0;
         width: 0px;
         height: 0px;
-        border: solid 0.5rem;
+        border: solid 0.4rem;
         border-radius: 2px;
-        border-color: $talkinputbox_bg;
+        border-color: $talkmsg_bg;
         transform: rotate(45deg);
       }
-      .talkMsg {
-        width: 100%;
-        word-wrap: break-word; 
-        border-radius: 5px;
-        padding: 0.3rem;
-      }
+    
     }
   }
 }
-
+//右侧栏的消息样式，也就是自己发的样式
 .talkMsgWrapper__self{
   flex-direction: row-reverse;
-
   .sliderWrapper__self{
     text-align: right;
     .talkDialog__self{
+      justify-content:flex-end;
       text-align: left;
         .triangle__self{
-          position: relative;
-          left: 3px;
+          margin-right: 0rem;
+          margin-left: -0.48rem;
         }
+        // .talkMsg__self{
+           
+        // }
     }
   }
  

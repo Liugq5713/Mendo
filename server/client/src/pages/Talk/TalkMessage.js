@@ -14,7 +14,7 @@ class TalkMessage extends Component {
         <div className="sliderWrapper sliderWrapper__self">
           <div className="talkerName talkerName__self">{username}</div>
           <div className="talkDialog talkDialog__self">
-            <div className="talkMsg">{this.props.msg}</div>
+            <div className="talkMsg talkMsg__self">{this.props.msg}</div>
             <div className="triangle triangle__self" />
           </div>
         </div>

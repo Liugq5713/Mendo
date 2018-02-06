@@ -26,7 +26,8 @@ class Menu extends Component {
                     <li><div className="divider"></div></li>
                     <li><a href="/api/logout"><i className="fa fa-sign-out" aria-hidden="true"></i>退出登录</a></li>
                 </ul>
-                <a href="#" data-activates="slide-out" className="button-collapse red-text darken-4-text"><i className="fa fa-bars" aria-hidden="true" /></a>
+                {/* href="#" */}
+                <a data-activates="slide-out" className="button-collapse red-text darken-4-text"><i className="fa fa-bars" aria-hidden="true" /></a>
             </div >
         )
     }

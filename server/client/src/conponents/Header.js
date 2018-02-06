@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 // import Avatar from "./Avatar";
 import Menu from "./Menu"
 class Header extends Component {
-  render() {
+  componentDidMount() {
     $(".button-collapse").sideNav();
+  }
+  render() {
     return (
       <header className="header">
         <div className="nav">
