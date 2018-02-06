@@ -22,11 +22,11 @@ class Menu extends Component {
                     </li>
                     <li><a href="#!"><i className="fa fa-plus" aria-hidden="true"></i>创建新房间</a></li>
                     <li><a href="#!"><i className="fa fa-user" aria-hidden="true"></i>关于作者</a></li>
-                    <li><a href="#!"><i className="fa fa-code" aria-hidden="true"></i>项目源代码</a></li>
+                    <li><a href="https://github.com/Liugq5713/Mendo"><i className="fa fa-code" aria-hidden="true"></i>项目源代码</a></li>
                     <li><div className="divider"></div></li>
-                    <li><a href="#!"><i className="fa fa-sign-out" aria-hidden="true"></i>退出登录</a></li>
+                    <li><a href="/api/logout"><i className="fa fa-sign-out" aria-hidden="true"></i>退出登录</a></li>
                 </ul>
-                <a href="#" data-activates="slide-out" className="button-collapse brown-text "><i className="fa fa-bars" aria-hidden="true" /></a>
+                <a href="#" data-activates="slide-out" className="button-collapse red-text darken-4-text"><i className="fa fa-bars" aria-hidden="true" /></a>
             </div >
         )
     }

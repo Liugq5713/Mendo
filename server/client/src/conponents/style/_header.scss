@@ -1,7 +1,7 @@
 .header {
   height: 100%;
   width: 100%;
-  background-color: rgb(228, 234, 238);
+  background-color: $header_bg;
   .nav {
     display: flex;
     flex-direction: row;

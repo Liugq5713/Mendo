@@ -52,9 +52,9 @@ module.exports = {
       template: require("html-webpack-template"),
       title: "Mendo Chat App",
       appMountId: "app",
-      mobile: true,
-      baseHref: "http://localhost:8080/",
-      lang: "zh-cmn-Hans"
+      baseHref: "http://10.224.5.55:8080/",
+      lang: "zh-cmn-Hans",
+      headHtmlSnippet: '<meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">  '
     })
   ]
 };

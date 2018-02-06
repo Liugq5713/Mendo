@@ -1,0 +1,10 @@
+html,
+body,#app {
+  height: 100%;
+//   overflow: hidden;
+}
+
+#componentWrapper {
+  height: 100%;
+  background-color:$index_bg ;
+}

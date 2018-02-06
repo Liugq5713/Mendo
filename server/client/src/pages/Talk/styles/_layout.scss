@@ -1,29 +1,27 @@
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
 
-#app {
-  height: 100%;
-}
-#componentWrapper {
-  height: 100%;
-}
 .page_talk {
   height: 100%;
   .talk_header {
-    height: 9%;
+    position:absolute;
+    top:0px;
     width: 100%;
     background-color: $page_bg;
   }
   .talk_middle {
-    height: 82%;
-    // overflow-y: auto;
+    position:absolute;
+    top: 56px;
+    bottom: 56px;
+    width: 100%;
+    overflow-y: auto;
     background-color: $talkcontent_bg;
   }
   .talk_footer {
-    height: 9%;
+    position:absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    
     background-color: $page_bg;
   }
 }

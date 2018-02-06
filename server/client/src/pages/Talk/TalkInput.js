@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export default class TalkInput extends Component {
   componentDidMount() {
-    // 
     document.addEventListener("keydown", this.onKeyPressed.bind(this));
     this.TimeoutScrollID = setTimeout(() => {
       this.boxToSendMsg.scrollIntoView(true);
@@ -22,11 +21,9 @@ export default class TalkInput extends Component {
 
   render() {
     return (
-      <div
-        className="row boxToSendMsg"
-        ref={boxToSendMsg => (this.boxToSendMsg = boxToSendMsg)}
-      >
-        <div className="col s9">
+      <div className="boxToSendMsg"
+        ref={boxToSendMsg => (this.boxToSendMsg = boxToSendMsg)}>
+        <div className="inputToSendMsgWrapper">
           <input
             className="inputToSendMsg"
             type="text"
@@ -34,9 +31,10 @@ export default class TalkInput extends Component {
             onChange={this.props.handleInput}
           />
         </div>
-        <div className="col s3 removeLeftPadding">
+
+        <div className="btnToSendMsgWrapper">
           <button
-            className="btnToSendMsg btn waves-effect waves-light "
+            className=" btn waves-effect waves-light "
             type="submit"
             name="action"
             value=""
@@ -44,7 +42,7 @@ export default class TalkInput extends Component {
               this.props.msg == "" ? null : this.props.sendMessage // 有内容才可以调用发送函数，没有内容为null
             }
           >
-            发送
+            <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
           </button>
         </div>
       </div>

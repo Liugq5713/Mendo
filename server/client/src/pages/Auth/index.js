@@ -14,7 +14,7 @@ class Auth extends Component {
   }
   render() {
     const username = this.props.username;
-    console.assert(username !== undefined, "username", username, "用户名未获取")
+    console.assert(username !== undefined, "username", username, "用户未登录")
     return <div>{username == undefined ? <Login /> : <Room />}</div>;
   }
 }
@@ -24,8 +24,5 @@ const mapStateToprops = state => (
     username: state.auth.profile.username
   }
 )
-
-
-
 
 export default connect(mapStateToprops)(Auth);

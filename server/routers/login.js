@@ -4,7 +4,7 @@ router.post(
   "/login",
   passport.authenticate("login", {
     successRedirect: "/",
-    failureRedirect: "/test"
+    failureRedirect: "/login"
   })
 );
 

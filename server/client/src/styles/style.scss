@@ -1,5 +1,5 @@
-@import "./base/_Setting";
-@import "./components/_Header";
-@import "./components/_Avatar";
+@import "./base/_setting";
+@import "./base/_index";
+@import "../conponents/style.scss";
 @import "../pages/Talk/style.scss";
 @import "../pages/Rooms/style.scss";

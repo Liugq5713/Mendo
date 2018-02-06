@@ -47,6 +47,7 @@ app.use(passport.session());
 app.use("/api", require("./routers/signup"));
 app.use("/api", require("./routers/login"));
 app.use("/api", require("./routers/checkuser"));
+app.use("/api", require("./routers/logout"));
 app.use("/auth", require("./routers/githubauth"));
 //初始化房间，并且渲染房间的列表
 app.get("/api/getroomlist", require("./services/room").initRoom);

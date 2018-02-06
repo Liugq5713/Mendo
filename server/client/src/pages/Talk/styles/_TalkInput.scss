@@ -1,25 +1,18 @@
 .boxToSendMsg {
-  margin-bottom: 0px;
-  height: 63px;
+  display: flex;
+  width: 100%;
   background-color: $talkinputbox_bg;
 }
-.formToSendMsg__fixed {
-  position: absolute;
+.inputToSendMsgWrapper{
+  flex-basis: 76%;
+  margin-bottom: 0px !important;
+}
+.inputToSendMsg{
+  padding-left: 10px !important;
+  margin-bottom: 0px !important;
+}
+.btnToSendMsgWrapper{
+  flex-basis: 24%;
+  text-align: center;
 }
 
-.formToSendMsg__android {
-  position: fixed;
-}
-
-.inputToSendMsg {
-  margin-top: 0.4rem;
-  margin-bottom: 0;
-}
-
-.btnToSendMsg {
-  margin-top: 0.42rem;
-  height: 2.9rem;
-}
-.removeLeftPadding {
-  padding: 0px !important;
-}

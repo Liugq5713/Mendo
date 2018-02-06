@@ -7,7 +7,7 @@ export default class Talkcontent extends Component {
     return (
       <div>
         <a href="#" className="avatar">
-          <img src={`/${avatar}`} alt="avatar" className="circle circle__style" />
+          <img src={`${avatar}`} alt="avatar" className="circle circle__style" />
         </a>
       </div>
     );
