@@ -22,6 +22,8 @@ import Home from "./Rooms";
 import Login from "./Login";
 import Signup from "./Signup";
 import Talk from "./Talk";
+// TODO的内容
+import Invitation from "./Invitation"
 export default class App extends Component {
   render() {
     return (
@@ -29,8 +31,10 @@ export default class App extends Component {
         {/* className="container"    */}
         <div id="componentWrapper">
           {/*AuthRedirect用于控制未登录状态下显示的界面  */}
-          <Route path="/" exact strict component={Auth} />
+          {/* <Route path="/" exact strict component={Auth} /> */}
           {/* <Route path="/" exact strict component={Home} /> */}
+          <Route path="/" exact strict component={Invitation} />
+
           <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/room/:roomId" component={Talk} />
