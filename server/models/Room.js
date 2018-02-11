@@ -17,11 +17,11 @@ const RoomSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
-
     createDate: {
         type: Date,
         default: getTime()
-    }
+    },
+
 });
 
 mongoose.model("room", RoomSchema);

@@ -1,4 +1,4 @@
-import avatar from "../images/avatar.png";
+import avatar from "../images/avatar/avatar_03.jpg";
 
 import React, { Component } from "react";
 

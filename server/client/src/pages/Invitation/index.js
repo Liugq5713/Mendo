@@ -6,20 +6,12 @@ class Invitation extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.handleCopy = this.handleCopy.bind(this);
     }
     handleClick(ev) {
-        console.log('ev', ev)
-        //在这里设置剪贴板的数据
-        document.execCommand('copy')
-        console.log("this is paste")
-        // We want our data, not data from any selection, to be written to the clipboard
-    }
-
-    handleCopy(ev) {
-        console.log("here")
-        ev.clipboardData.setData('text/plain', 'Hello, world!');
-        ev.preventDefault();
+        const inputText = document.querySelector(".link--invited");
+        inputText.focus();
+        inputText.setSelectionRange(0, inputText.value.length);
+        const isCopy = document.execCommand('copy', true);
     }
     render() {
         return (
@@ -39,7 +31,8 @@ class Invitation extends Component {
                     </div>
                     <div className="card-content">
                         <h4>邀请链接</h4>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        {/* TODO:这里是动态生成的邀请链接 */}
+                        <input readOnly className="link--invited" type="text" value="I am a very simple card. I am I require little." />
                     </div>
                 </div>
             </div>

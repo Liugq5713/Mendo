@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
 import bgUserinfo from "../images/bgUserinfo.jpg"
-import avatar from "../images/avatar.png";
+import Avatar from "./Avatar"
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +15,7 @@ class Menu extends Component {
                             <div className="background">
                                 <img src={bgUserinfo} />
                             </div>
-                            <a href="#!user"><img className="circle" src={avatar} /></a>
+                            <Avatar />
                             <a href="#!name"><span className="brown-text darken-4-text name">{this.props.username}</span></a>
                             <a href="#!email"><span className="brown-text darken-3-text email">诗酒趁年华</span></a>
                         </div>
