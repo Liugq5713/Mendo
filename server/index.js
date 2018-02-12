@@ -18,12 +18,7 @@ require("./services/signup");
 require("./services/login");
 require("./services/githubauth");
 
-// ----
-// express服务启动，io且挂载到服务器上
 var app = express();
-
-//设置常量
-app.locals.rooms = [];
 
 // 设置cookie
 app.use(bodyParser.urlencoded({ extended: true }));
