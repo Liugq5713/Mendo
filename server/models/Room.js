@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const getTime = require("../tools/getTime")
+const getTime = require("../helpers/getTime")
 const Schema = mongoose.Schema;
 
 const RoomSchema = new mongoose.Schema({

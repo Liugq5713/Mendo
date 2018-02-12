@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const getTime = require("../tools/getTime")
+const getTime = require("../helpers/getTime")
 
 const SALT_WORK_FACTOR = 10;
 

@@ -21,10 +21,6 @@ require("./services/githubauth");
 // ----
 // express服务启动，io且挂载到服务器上
 var app = express();
-var server = http.createServer(app);
-const io = require("socket.io").listen(server);
-require("./socket")(io);
-// require("./socket/test")(io);
 
 //设置常量
 app.locals.rooms = [];
@@ -44,20 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //组织路由
-app.use("/api", require("./routers/signup"));
-app.use("/api", require("./routers/login"));
-app.use("/api", require("./routers/checkuser"));
-app.use("/api", require("./routers/logout"));
-app.use("/auth", require("./routers/githubauth"));
-//初始化房间，并且渲染房间的列表
-app.get("/api/getroomlist", require("./services/room").initRoom);
-app.get("/api/getroomlist", require("./services/room").getRoomlist_MW);
-//对于socket进行处理
-app.get("/api/room/:roomId", (req, res, next) => {
-  console.log("here")
-  res.redirect("/room/" + req.params.roomId)
-})
-//监听
-server.listen("5000", () => {
-  console.log("port 5000 is listening");
-});
+app.use("/api", require("./controllers"));
+app.use("/auth", require("./controllers/room/githubauth"));
+
+module.exports = app;
