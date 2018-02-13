@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+const Room = mongoose.model("room");
 module.exports = async function (req, res, next) {
     const roomname = "default";
     try {

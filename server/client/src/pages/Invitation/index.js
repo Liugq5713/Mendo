@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+// import { bindActionCreators } from "redux"
 import Header from "../../conponents/Header"
 import invate_room from "../../images/invate_room.jpg"
+import { createRoom } from "./action"
 
 class Invitation extends Component {
     constructor(props) {
@@ -14,6 +17,8 @@ class Invitation extends Component {
         const isCopy = document.execCommand('copy', true);
     }
     render() {
+        this.props.getLink();
+        const inviteLink = this.props.inviteLink;
         return (
             <div>
                 <Header />
@@ -32,7 +37,7 @@ class Invitation extends Component {
                     <div className="card-content">
                         <h4>邀请链接</h4>
                         {/* TODO:这里是动态生成的邀请链接 */}
-                        <input readOnly className="link--invited" type="text" value="I am a very simple card. I am I require little." />
+                        <input readOnly className="link--invited" type="text" value={inviteLink} />
                     </div>
                 </div>
             </div>
@@ -40,4 +45,14 @@ class Invitation extends Component {
     }
 }
 
-export default Invitation;
+const mapDispatchToProps = (dispatch) => ({
+    getLink: () => {
+        dispatch(createRoom())
+    }
+})
+
+const mapStateToProps = (state) => ({
+    inviteLink: state.link.inviteLink
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Invitation);

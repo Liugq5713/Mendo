@@ -18,9 +18,7 @@ export default class TalkContent extends Component {
     const chatContents = this.props.talkMsgContents.map((talk, idx) => {
       const isSelf = talk.username === this.props.username;
       return (
-
         <TalkMessage key={idx} username={talk.username} msg={talk.msg} isSelf={isSelf} />
-
       )
     });
     return (
@@ -29,7 +27,7 @@ export default class TalkContent extends Component {
           TalkContainer => (this.TalkContainer = TalkContainer)
         }
       >
-        <div className="row">{chatContents}</div>;
+        <div className="row">{chatContents}</div>
       </div>
     )
 

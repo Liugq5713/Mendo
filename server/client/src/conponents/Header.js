@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import Menu from "./Menu"
 class Header extends Component {
   componentDidMount() {
-    $(".button-collapse").sideNav();
+    $(".button-collapse").sideNav({
+      closeOnClick: true
+    });
   }
   render() {
     return (
