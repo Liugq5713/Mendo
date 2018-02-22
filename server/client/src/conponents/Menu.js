@@ -17,9 +17,14 @@ class Menu extends Component {
                                 <img src={bgUserinfo} />
                             </div>
                             <Avatar />
-                            <a href="#!name"><span className="brown-text darken-4-text name">{this.props.username}</span></a>
-                            <a href="#!email"><span className="brown-text darken-3-text email">诗酒趁年华</span></a>
+                            <a href="#!name"><span className="brown-text darken-4-text name name_pos">{this.props.username}</span></a>
+                            <a href="#!email"><span className="brown-text darken-3-text email email_pos ">诗酒趁年华</span></a>
                         </div>
+                    </li>
+                    <li>
+                        <Link to="/home">
+                            <i className="fa fa-home" aria-hidden="true"></i>主页
+                        </Link>
                     </li>
                     <li>
                         <Link to="/invite">

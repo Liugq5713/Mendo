@@ -1,0 +1,1 @@
+export const GET_CHAT_MSG = "GET_CHAT_MSG";

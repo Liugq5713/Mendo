@@ -21,7 +21,11 @@ const RoomSchema = new mongoose.Schema({
         type: Date,
         default: getTime()
     },
-
+    msgs: {
+        type: Array,
+        default: []
+    }
 });
+
 
 mongoose.model("room", RoomSchema);

@@ -12,8 +12,6 @@ const LocalStrategy = require("passport-local");
 const keys = require("./config/keys");
 
 require("./db");
-require("./models/User");
-require("./models/Room");
 require("./services/signup");
 require("./services/login");
 require("./services/githubauth");

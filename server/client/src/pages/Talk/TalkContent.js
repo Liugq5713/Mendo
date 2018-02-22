@@ -15,7 +15,8 @@ export default class TalkContent extends Component {
     this.TalkContainer.scrollTop = this.TalkContainer.scrollHeight;
   }
   render() {
-    const chatContents = this.props.talkMsgContents.map((talk, idx) => {
+    const talkMsgContents = this.props.prevtalkMsgContents.concat(this.props.talkMsgContents)
+    const chatContents = talkMsgContents.map((talk, idx) => {
       const isSelf = talk.username === this.props.username;
       return (
         <TalkMessage key={idx} username={talk.username} msg={talk.msg} isSelf={isSelf} />

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Header from "../../conponents/Header";
 import TalkContent from "./TalkContent";
 import TalkInput from "./TalkInput";
+import { getChatMsg } from "./action"
 
 import socket from "../../actions/socket"
 
-import { connect } from "react-redux";
 
 // import Chat from "./Chat";
 class PageTalk extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +21,8 @@ class PageTalk extends Component {
         msg: ""
       }
     };
+    this.props.getChatMsg(this.props.match.params.roomId);
+
     //socket  io 连接发送信息  配置
     socket.on("connect", () => {
       socket.emit("join", "one join--has joined--" + this.props.match.params.roomId)
@@ -42,7 +46,6 @@ class PageTalk extends Component {
         talkMsgContent: { ...this.state.talkMsgContent, msg: "" }
       });
     };
-
     this.handleInput = this.handleInput.bind(this);
   }
 
@@ -54,8 +57,7 @@ class PageTalk extends Component {
         talkMsgContent: { ...this.state.talkMsgContent, msg: e.target.value, username: this.props.username }
       };
     });
-  }
-
+  };
 
   render() {
     const talkMsgContents = this.state.talkMsgContents;
@@ -71,6 +73,7 @@ class PageTalk extends Component {
           ref={dom_talk_middle => (this.dom_talk_middle = dom_talk_middle)}
         >
           <TalkContent
+            prevtalkMsgContents={this.props.talkMsgContents}
             talkMsgContents={talkMsgContents}
             username={username}
           />
@@ -87,8 +90,14 @@ class PageTalk extends Component {
   }
 }
 
-const mapStateToprops = state => ({
-  username: state.auth.profile.username
-})
+const mapStateToProps = state => ({
+  username: state.auth.profile.username,
+  talkMsgContents: state.msg.msg
+});
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  getChatMsg: () => {
+    dispatch(getChatMsg(ownProps.match.params.roomId))
+  }
+});
 
-export default connect(mapStateToprops)(PageTalk);
+export default connect(mapStateToProps, mapDispatchToProps)(PageTalk);

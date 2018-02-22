@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import authReducer from "../pages/Auth/reducer"
 import roomReducer from "../pages/Rooms/reducer";
 import inviteReducer from "../pages/Invitation/reducer"
+import getChatMsgReducer from "../pages/Talk/reducer"
 
 import { getUsername } from "../pages/Auth/action"
 import { getRoomlist } from "../pages/Rooms/action";
@@ -10,7 +11,8 @@ import { getRoomlist } from "../pages/Rooms/action";
 const rootReducer = combineReducers({
   room: roomReducer,
   auth: authReducer,
-  link: inviteReducer
+  link: inviteReducer,
+  msg: getChatMsgReducer
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export default () => {

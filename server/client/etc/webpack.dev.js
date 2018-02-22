@@ -12,9 +12,13 @@ module.exports = merge(common, {
     historyApiFallback: true,
     proxy: [
       {
-        path: "/api/*",
+        path: "/api/**",
         target: "http://localhost:5000"
       },
+      // {
+      //   path: "/api/*/*",
+      //   target: "http://localhost:5000"
+      // },
       {
         path: "/api/room/*",
         target: "http://localhost:5000"
