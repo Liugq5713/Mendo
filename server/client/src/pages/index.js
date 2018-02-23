@@ -36,7 +36,6 @@ export default class App extends Component {
           <Route path="/" exact strict component={Auth} />
           {/* <Route path="/" exact strict component={Home} /> */}
           {/* <Route path="/" exact strict component={Invitation} /> */}
-          <Route path="/home" exact strict component={Home} />
           <Route exact path="/invite" component={Invitation} />
           <Route exact path="/transfer" component={Transfer} />
           <Route exact path="/about" component={About} />

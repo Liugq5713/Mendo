@@ -6,7 +6,7 @@ import inviteReducer from "../pages/Invitation/reducer"
 import getChatMsgReducer from "../pages/Talk/reducer"
 
 import { getUsername } from "../pages/Auth/action"
-import { getRoomlist } from "../pages/Rooms/action";
+// import { getRoomlist } from "../pages/Rooms/action";
 
 const rootReducer = combineReducers({
   room: roomReducer,
@@ -23,6 +23,6 @@ export default () => {
   // 对个人信息进行初始化
   store.dispatch(getUsername())
   //  对房间信息进行一次初始化
-  store.dispatch(getRoomlist());
+  // store.dispatch(getRoomlist());
   return store;
 };

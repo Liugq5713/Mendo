@@ -3,7 +3,7 @@ export default (state = { roomlist: [] }, action) => {
     case "GET_ROOMLIST":
       return {
         ...state,
-        roomlist: state.roomlist.concat(action.roomlist)
+        roomlist: action.roomlist
       };
     default:
       return state;

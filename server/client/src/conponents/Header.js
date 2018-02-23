@@ -17,7 +17,7 @@ class Header extends Component {
             {this.props.feature == "back" || this.props.feature == "" ? (
               // 后退按钮
               <Link to="/">
-                <i className="fa fa-angle-left" aria-hidden="true" />
+                <i className="fa fa-angle-left red-text darken-4-text" aria-hidden="true" />
               </Link>
             ) : (
                 // 菜单按钮

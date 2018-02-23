@@ -2,14 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../../conponents/Header";
 import Room from "./Room";
+import { getRoomlist } from "./action"
 
 class PageRoom extends Component {
+  componentWillMount() {
+    this.props.getRoomlist();
+  }
   render() {
     const roomlist = this.props.roomlist;
+    console.log('roomlist', roomlist)
     const RoomList = roomlist.map(room => {
       return (
         <li key={room._id}>
-          <Room roomname={room.roomname} roomId={room._id} />
+          <Room roomName={room.name} roomId={room._id} roomSlogen={room.slogen} />
         </li>
       )
     });
@@ -21,8 +26,13 @@ class PageRoom extends Component {
     );
   }
 }
-const mapStateToprops = state => ({
+const mapStateToProps = state => ({
   roomlist: state.room.roomlist
 });
 
-export default connect(mapStateToprops)(PageRoom);
+const mapDispatchToprops = (dispatch) => ({
+  getRoomlist: () => {
+    dispatch(getRoomlist())
+  }
+})
+export default connect(mapStateToProps, mapDispatchToprops)(PageRoom);

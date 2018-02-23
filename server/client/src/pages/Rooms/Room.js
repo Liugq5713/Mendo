@@ -20,10 +20,10 @@ class Room extends Component {
             </div>
             <div className="card-stacked">
               <div className="card-content card-content__modify">
-                <p>Mendo</p>
+                <p>{this.props.roomName}</p>
               </div>
               <div className="card-action card-action__modify">
-                <p href="#">This is a link</p>
+                <p href="#">{this.props.roomSlogen}</p>
               </div>
             </div>
           </div>

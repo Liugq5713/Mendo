@@ -3,7 +3,7 @@ const Room = mongoose.model("room");
 
 module.exports = async function () {
     try {
-        let roomlists = await Room.find({}, { roomname: true });
+        let roomlists = await Room.find({}, { room: true });
         return roomlists;
     } catch (err) {
         console.log(err);

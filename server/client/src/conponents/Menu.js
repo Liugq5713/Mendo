@@ -22,7 +22,7 @@ class Menu extends Component {
                         </div>
                     </li>
                     <li>
-                        <Link to="/home">
+                        <Link to="/">
                             <i className="fa fa-home" aria-hidden="true"></i>主页
                         </Link>
                     </li>
@@ -31,11 +31,11 @@ class Menu extends Component {
                             <i className="fa fa-plus" aria-hidden="true"></i>创建新房间
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/transfer">
                             <i className="fa fa-exchange" aria-hidden="true"></i>传送门
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/about">
                             <i className="fa fa-user" aria-hidden="true"></i>关于作者

@@ -3,7 +3,10 @@ const getTime = require("../helpers/getTime")
 const Schema = mongoose.Schema;
 
 const RoomSchema = new mongoose.Schema({
-    roomname: {
+    name: {
+        type: String
+    },
+    slogen: {
         type: String
     },
     isPublic: {

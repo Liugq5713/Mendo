@@ -17,9 +17,10 @@ require("./services/login");
 require("./services/githubauth");
 
 var app = express();
-
-// 设置cookie
+// 对前端发送过来的数据解析的配置
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+// 设置cookie
 app.use(
   expressSession({
     name: "mendo",
