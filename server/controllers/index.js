@@ -10,7 +10,7 @@ const initRoom = require("./room/initRoom");
 const getRoomlist = require("./room/getRoomlist");
 const enterRoom = require("./room/enterRoom");
 const createRoom = require("./room/createRoom");
-const updateRoom = require("./room/updateRoom")
+// const updateRoom = require("./room/updateRoom")
 //聊天信息的初始化
 const getChatMsg = require("./msg/getMsg");
 
@@ -24,12 +24,12 @@ router.get("/checkuser", checkuser);
 
 router.get("/getroomlist", initRoom, getRoomlist);
 
-router.get("/createroom", createRoom);
+router.post("/createroom", createRoom);
 
 router.get("/room/:roomId", enterRoom);
 
 router.get("/getchatmsg/:roomId", getChatMsg);
 
-router.post("/updateroom", updateRoom)
+// router.post("/updateroom", updateRoom)
 
 module.exports = router;

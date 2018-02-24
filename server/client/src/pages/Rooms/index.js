@@ -10,7 +10,6 @@ class PageRoom extends Component {
   }
   render() {
     const roomlist = this.props.roomlist;
-    console.log('roomlist', roomlist)
     const RoomList = roomlist.map(room => {
       return (
         <li key={room._id}>

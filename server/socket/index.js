@@ -19,12 +19,18 @@ module.exports = function (io) {
       Room.findById(roomId, function (err, room) {
         // console.log('room', room)
         if (err) {
-          throw "不能找到当前聊天的房间"
+          throw new Error({
+            name: "FindByIdException",
+            message: "不能找到当前聊天的房间"
+          })
         }
         room.msgs.push(data.message);
         room.save(function (err, res) {
           if (err) {
-            throw "聊天信息保存数据库失败"
+            throw new Error({
+              name: "UpdateRoomException",
+              message: "聊天信息保存数据库失败"
+            })
           }
         })
       })
