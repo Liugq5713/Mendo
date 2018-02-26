@@ -52,6 +52,7 @@ module.exports = {
       template: require("html-webpack-template"),
       title: "Mendo Chat App",
       appMountId: "app",
+      // IpToModify
       baseHref: "http://10.224.5.55:8080/",
       lang: "zh-cmn-Hans",
       headHtmlSnippet:
