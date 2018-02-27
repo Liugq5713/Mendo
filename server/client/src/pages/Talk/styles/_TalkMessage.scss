@@ -50,9 +50,13 @@
     .talkDialog__self{
       justify-content:flex-end;
       text-align: left;
+      .talkMsg__self{
+        background-color:$talkmsg_bg--self ;
+      }
         .triangle__self{
           margin-right: 0rem;
           margin-left: -0.48rem;
+           border-color: $talkmsg_bg--self;
         }
         // .talkMsg__self{
            
