@@ -8,7 +8,7 @@ module.exports = merge(common, {
     contentBase: "../dist",
     port: 8080,
     // IpToModify
-    host: "10.224.5.55",
+    host: "localhost",
     open: true,
     historyApiFallback: true,
     proxy: [
@@ -16,10 +16,6 @@ module.exports = merge(common, {
         path: "/api/**",
         target: "http://localhost:5000"
       },
-      // {
-      //   path: "/api/*/*",
-      //   target: "http://localhost:5000"
-      // },
       {
         path: "/api/room/*",
         target: "http://localhost:5000"

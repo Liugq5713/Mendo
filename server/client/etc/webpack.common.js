@@ -53,7 +53,7 @@ module.exports = {
       title: "Mendo Chat App",
       appMountId: "app",
       // IpToModify
-      baseHref: "http://10.224.5.55:8080/",
+      baseHref: "http://localhost:8080/",
       lang: "zh-cmn-Hans",
       headHtmlSnippet:
         '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />'
