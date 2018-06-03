@@ -1,7 +1,6 @@
 import React from "react"
 
 const CreatingRoom = (props) => {
-    console.log("props.handleCreateRoom", props.handleCreateRoom == undefined)
     return (
         <div>
             <label htmlFor="roomName">房间名</label>

@@ -6,7 +6,6 @@ module.exports = async function (req, res, next) {
         let roomlists_public = await Room.find({
             isPublic: true
         }, "name  slogen");
-        console.log(' roomlists_public', roomlists_public)
         let roomlists_selfCreator = await Room.find({
             creator: req.user._id
         }, "name  slogen")

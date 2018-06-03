@@ -50,7 +50,7 @@ class Invitation extends Component {
     }
 
     render() {
-        const hostname = "10.244.5.55:8080"
+        const hostname = "http://localhost:8080"
         const inviteLink = hostname + "/room/" + this.state.roomId;
         if (this.state.roomName !== "" && this.state.roomSlogen !== "") {
             const createRoom = this.handleCreateRoom;
@@ -82,7 +82,7 @@ class Invitation extends Component {
                                 ? <CreateRoom inviteLink={inviteLink} />
                                 : <CreatingRoom
                                     handleInputChange={this.handleInputChange}
-                                    handleCreateRoom={createRoom}
+                                    handleCreateRoom={this.handleCreateRoom}
                                 />
                         }
 
